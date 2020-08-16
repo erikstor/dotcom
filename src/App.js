@@ -1,12 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Album from './main';
+
+import Header from './partials/Header';
+import Projects from './partials/Projects';
+import Footer from './partials/Footer';
 
 function App() {
-  return (
-      <Album/>
-  );
+    return ( 
+        <div>
+            <Header />
+            <Projects />
+            <Footer />
+        </div>
+    );
 }
 
 export default App;
