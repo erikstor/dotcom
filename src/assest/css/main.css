@@ -4,15 +4,15 @@
     background-repeat: no-repeat;
 }
 
-.margin-logo{
+.margin-logo {
     margin-right: 3em;
 }
 
-.logo-bar{
+.logo-bar {
     height: 3.5rem;
 }
 
-p.text-primary{
+p.text-primary {
     color: #000;
 }
 
@@ -26,28 +26,71 @@ p.text-primary{
     flex-direction: column;
 }
 
-.MuiAppBar-colorPrimary.bg-app-bar{
+.MuiAppBar-colorPrimary.bg-app-bar {
     background-color: #535353;
 }
 
 /*
     Barrita debajo de las opciones
 */
-span.PrivateTabIndicator-colorSecondary-4{
+span.PrivateTabIndicator-colorSecondary-4 {
     background-color: #5cff0c;
 }
 
-button.bg-verde-radioactivo{
+button.bg-verde-radioactivo {
     background-color: #5cff0c;
 }
 
-button.bg-verde-radioactivo:hover{
+button.bg-verde-radioactivo:hover {
     background-color: #4DCA0F;
 }
 
-button.bg-verde-radioactivo{
+button.bg-verde-radioactivo {
     color: #000;
 }
+
+.background-historia-main {
+    background-image: url('../img/bannerHistoria.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.background-historia-1 {
+    background-image: url('../img/bannerHistoria_1.jpg');
+    background-size: 30%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+.background-historia-2 {
+    background-image: url('../img/sinco.png');
+    background-size: 30%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+.background-historia-3 {
+    background-image: url('../img/teamNexura.png');
+    background-size: 100vh;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+.size-50 {
+    width: 50%;
+}
+
+.size-80 {
+    width: 80%;
+}
+
+.size-100 {
+    width: 100%;
+}
+
 
 /*
 Media query's
@@ -57,17 +100,66 @@ Media query's
     .backgroundIndex {
         min-height: 40vh;
     }
+
+    .background-historia-main {
+        min-height: 40vh;
+    }
+
+    .background-historia-1 {
+        min-height: calc(100vh / 2);
+    }
+
+    .background-historia-2 {
+        min-height: 70vh;
+    }
+
+    .background-historia-3 {
+        min-height: 80vh;
+    }
+
 }
 
-@media (min-width: 1200px){
+@media (min-width: 1200px) {
     .backgroundIndex {
         min-height: 60vh;
+    }
+
+    .background-historia-main {
+        min-height: 60vh;
+    }
+
+    .background-historia-1 {
+        min-height: calc(100vh / 2);
+    }
+
+    .background-historia-2 {
+        min-height: 70vh
+    }
+
+    .background-historia-3 {
+        min-height: 80vh;
     }
 }
 
 @media (min-width: 1400px) {
     .backgroundIndex {
         min-height: 100vh;
+    }
+
+    .background-historia-main {
+        min-height: 100vh;
+    }
+
+    .background-historia-1 {
+        min-height: calc(100vh / 2);
+    }
+
+    .background-historia-2 {
+        min-height: 70vh;
+    }
+
+    .background-historia-3 {
+        min-height: 80vh;
     }
 }
 
