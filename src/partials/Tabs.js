@@ -85,7 +85,9 @@ export default function SimpleTabs() {
             <AppBar position="sticky" className="bg-app-bar">
                 <Toolbar>
                     <div className="margin-logo">
-                        <img className="logo-bar" src={Logo} alt=""/>
+                        <Link href="http://www.erikstor.com/">
+                            <img className="logo-bar" src={Logo} alt=""/>
+                        </Link>
                     </div>
                     <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
                         <Tab label={tab1} {...a11yProps(0)} />
