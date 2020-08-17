@@ -33,7 +33,7 @@ p.text-primary {
 /*
     Barrita debajo de las opciones
 */
-span.PrivateTabIndicator-colorSecondary-4 {
+span.MuiTabs-indicator {
     background-color: #5cff0c;
 }
 
