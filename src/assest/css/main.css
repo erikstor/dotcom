@@ -1,0 +1,73 @@
+.backgroundIndex {
+    background-image: url('../img/index.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.margin-logo{
+    margin-right: 3em;
+}
+
+.logo-bar{
+    height: 3.5rem;
+}
+
+p.text-primary{
+    color: #000;
+}
+
+.contenedorBienvenida {
+    min-height: 40vh;
+}
+
+.flex-column-center {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.MuiAppBar-colorPrimary.bg-app-bar{
+    background-color: #535353;
+}
+
+/*
+    Barrita debajo de las opciones
+*/
+span.PrivateTabIndicator-colorSecondary-4{
+    background-color: #5cff0c;
+}
+
+button.bg-verde-radioactivo{
+    background-color: #5cff0c;
+}
+
+button.bg-verde-radioactivo:hover{
+    background-color: #4DCA0F;
+}
+
+button.bg-verde-radioactivo{
+    color: #000;
+}
+
+/*
+Media query's
+ */
+
+@media (max-width: 1200px) {
+    .backgroundIndex {
+        min-height: 40vh;
+    }
+}
+
+@media (min-width: 1200px){
+    .backgroundIndex {
+        min-height: 60vh;
+    }
+}
+
+@media (min-width: 1400px) {
+    .backgroundIndex {
+        min-height: 100vh;
+    }
+}
+
