@@ -12,7 +12,9 @@ import {makeStyles} from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 import Link from '@material-ui/core/Link';
 
+import ButtonWpp from "./ButtonWpp";
 import Projects from './Projects';
+import Skills from "../components/Skills";
 
 /*
 css e imagenes
@@ -21,6 +23,10 @@ css e imagenes
 import '../assest/css/main.css'
 import Logo from '../assest/img/logo.png'
 import bannerHistoria_1 from '../assest/img/teamNexura.png'
+import Card from "@material-ui/core/Card";
+import CardMedia from "@material-ui/core/CardMedia";
+import CardContent from "@material-ui/core/CardContent";
+import CardActions from "@material-ui/core/CardActions";
 
 function TabPanel(props) {
     const {children, value, index, ...other} = props;
@@ -61,7 +67,6 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: theme.palette.background.paper,
     }
 }));
-
 
 function ir(id) {
     document.getElementById(id).click();
@@ -233,13 +238,8 @@ export default function SimpleTabs() {
                     </p>
                 </div>
 
-                <div className="background-historia-3">
-
-                </div>
-
                 <div>
                     <p>
-
                         Asi como todo el mundo tengo mis aficiones, y la que más me apasiona a la fecha son las motos.
                         También me encanta la comida italiana y me encanta aprender constantemente. De hecho actualmente
                         me encuentro aprendiendo nuevas tecnologías, librerías y frameworks. Creo que es un poco
@@ -251,11 +251,13 @@ export default function SimpleTabs() {
 
             </TabPanel>
             <TabPanel value={value} index={2}>
-                Item Three
+                <Skills />
             </TabPanel>
             <TabPanel value={value} index={3}>
                 <Projects/>
             </TabPanel>
+
+            <ButtonWpp />
         </div>
     );
 }

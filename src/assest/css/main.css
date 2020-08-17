@@ -93,6 +93,61 @@ button.bg-verde-radioactivo {
 
 
 /*
+    Colores de las barras de progreso
+*/
+
+/*Color claro*/
+div.bg-rojo-progress {
+    background-color: #FF8888;
+}
+
+/*Color oscuro*/
+div.bg-rojo-progress > div {
+    background-color: #FF1919;
+}
+
+/*Color claro*/
+div.bg-azul-progress {
+    background-color: #79A1FF;
+}
+
+/*Color oscuro*/
+div.bg-azul-progress > div {
+    background-color: #306EFF;
+}
+
+/*Color claro*/
+div.bg-verde-progress {
+    background-color: #84FF87;
+}
+
+/*Color oscuro*/
+div.bg-verde-progress > div {
+    background-color: #57EA5A;
+}
+
+/*Color claro*/
+div.bg-amarillo-progress {
+    background-color: #F0FF73;
+}
+
+/*Color oscuro*/
+div.bg-amarillo-progress > div {
+    background-color: #E9FE3A;
+}
+
+/*Color claro*/
+div.bg-naranja-progress {
+    background-color: #FFCF7B;
+}
+
+/*Color oscuro*/
+div.bg-naranja-progress > div {
+    background-color: #FF9523;
+}
+
+
+/*
 Media query's
  */
 
