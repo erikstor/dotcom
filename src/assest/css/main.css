@@ -72,7 +72,7 @@ button.bg-verde-radioactivo {
 }
 
 .background-historia-3 {
-    background-image: url('../img/teamNexura.png');
+    background-image: url('../img/teamNexura.jpg');
     background-size: 100vh;
     background-repeat: no-repeat;
     background-position-x: center;
@@ -162,14 +162,17 @@ Media query's
 
     .background-historia-1 {
         min-height: calc(100vh / 2);
+        background-size: contain;
     }
 
     .background-historia-2 {
         min-height: 70vh;
+        background-size: contain;
     }
 
     .background-historia-3 {
         min-height: 80vh;
+        background-size: contain;
     }
 
 }
