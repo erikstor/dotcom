@@ -16,6 +16,10 @@ p.text-primary {
     color: #000;
 }
 
+body p{
+    text-align: justify;
+}
+
 .contenedorBienvenida {
     min-height: 40vh;
 }
@@ -153,11 +157,11 @@ Media query's
 
 @media (max-width: 1200px) {
     .backgroundIndex {
-        min-height: 40vh;
+        min-height: calc(100vh / 3);
     }
 
     .background-historia-main {
-        min-height: 40vh;
+        min-height: calc(100vh / 3);
     }
 
     .background-historia-1 {
@@ -166,12 +170,12 @@ Media query's
     }
 
     .background-historia-2 {
-        min-height: 70vh;
+        min-height: calc(100vh / 1.5);
         background-size: contain;
     }
 
     .background-historia-3 {
-        min-height: 80vh;
+        min-height: calc(100vh / 3);
         background-size: contain;
     }
 
