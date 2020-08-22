@@ -16,7 +16,7 @@ p.text-primary {
     color: #000;
 }
 
-body p{
+body p {
     text-align: justify;
 }
 
@@ -95,6 +95,24 @@ button.bg-verde-radioactivo {
     width: 100%;
 }
 
+/* Right*/
+p.icon-align-footer-r {
+    text-align: right;
+}
+
+/*Middle*/
+p.icon-align-footer-m {
+    text-align: center;
+}
+
+/*Left*/
+p.icon-align-footer-l {
+    text-align: left;
+}
+
+img.size-gmail-icon{
+    width: 1.8em;
+}
 
 /*
     Colores de las barras de progreso
