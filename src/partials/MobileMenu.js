@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
-import {makeStyles} from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
+import { makeStyles } from '@material-ui/core/styles';
+import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
@@ -10,7 +10,6 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
-import MenuIcon from '@material-ui/icons/Menu';
 
 const useStyles = makeStyles({
     list: {
@@ -21,7 +20,7 @@ const useStyles = makeStyles({
     },
 });
 
-export default function TemporaryDrawer() {
+export default function SwipeableTemporaryDrawer() {
     const classes = useStyles();
     const [state, setState] = React.useState({
         top: false,
@@ -30,12 +29,16 @@ export default function TemporaryDrawer() {
         right: false,
     });
 
+    document.querySelector('.display-mobile-menu div').addEventListener('click', function() {
+
+    }, false);
+
     const toggleDrawer = (anchor, open) => (event) => {
-        if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+        if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
             return;
         }
 
-        setState({...state, [anchor]: open});
+        setState({ ...state, [anchor]: open });
     };
 
     const list = (anchor) => (
@@ -50,17 +53,17 @@ export default function TemporaryDrawer() {
             <List>
                 {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
                     <ListItem button key={text}>
-                        <ListItemIcon>{index % 2 === 0 ? <MenuIcon/> : <MailIcon/>}</ListItemIcon>
-                        <ListItemText primary={text}/>
+                        <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                        <ListItemText primary={text} />
                     </ListItem>
                 ))}
             </List>
-            <Divider/>
+            <Divider />
             <List>
                 {['All mail', 'Trash', 'Spam'].map((text, index) => (
                     <ListItem button key={text}>
-                        <ListItemIcon>{index % 2 === 0 ? <InboxIcon/> : <MailIcon/>}</ListItemIcon>
-                        <ListItemText primary={text}/>
+                        <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                        <ListItemText primary={text} />
                     </ListItem>
                 ))}
             </List>
@@ -69,15 +72,19 @@ export default function TemporaryDrawer() {
 
     return (
         <div>
-
-            <React.Fragment>
-
-                <Button><MenuIcon/></Button>
-                {/*<Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>*/}
-                {/*    {list(anchor)}*/}
-                {/*</Drawer>*/}
-            </React.Fragment>
-
+            {['right'].map((anchor) => (
+                <React.Fragment key={anchor}>
+                    <Button  onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
+                    <SwipeableDrawer
+                        anchor={anchor}
+                        open={state[anchor]}
+                        onClose={toggleDrawer(anchor, false)}
+                        onOpen={toggleDrawer(anchor, true)}
+                    >
+                        {list(anchor)}
+                    </SwipeableDrawer>
+                </React.Fragment>
+            ))}
         </div>
     );
 }

@@ -1,3 +1,23 @@
+.display-mobile-menu {
+    display: none;
+    min-height: 64px;
+    background: #535353;
+}
+
+header.display-desktop-menu {
+    display: none;
+}
+
+.display-mobile-menu div {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+}
+
+
+
 .backgroundIndex {
     background-image: url('../img/index.jpg');
     background-size: 100%;
@@ -202,6 +222,12 @@ Media query's
  */
 
 @media (max-width: 1200px) {
+
+    .display-mobile-menu {
+        display: flex;
+        justify-content: flex-end;
+    }
+
     .backgroundIndex {
         min-height: calc(100vh / 3);
     }
@@ -233,12 +259,17 @@ Media query's
         margin-left: -0.4em;
     }
 
-    div.margin-l-2-5{
+    div.margin-l-2-5 {
         margin-left: -0.4em;
     }
 }
 
 @media (min-width: 1200px) {
+
+    header.display-desktop-menu {
+        display: block;
+    }
+
     .backgroundIndex {
         min-height: 60vh;
     }

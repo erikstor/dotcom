@@ -5,7 +5,7 @@ import Header from './partials/Header';
 import Footer from './partials/Footer';
 
 function App() {
-    return ( 
+    return (
         <div>
             <Header />
             <Footer />

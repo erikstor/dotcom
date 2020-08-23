@@ -89,7 +89,7 @@ export default function SimpleTabs() {
 
     return (
         <div className={classes.root}>
-            <AppBar position="sticky" className="bg-app-bar">
+            <AppBar position="sticky" className="bg-app-bar display-desktop-menu">
                 <Toolbar>
                     <div className="margin-logo">
                         <Link href="http://www.erikstor.com/">

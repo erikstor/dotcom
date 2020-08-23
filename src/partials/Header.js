@@ -4,26 +4,18 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Tabs from './Tabs';
 import MobileMenu from './MobileMenu';
 
-export default function Album() {
-
-    window.addEventListener('resize', selectMenu);
-    var width = 0;
-
-    function selectMenu() {
-        width = window.outerWidth;
-
-        if (width > 800) {
-            return <Tabs/>
-        } else {
-            return <MobileMenu/>
-        }
-    }
+export default function Header() {
 
     return (
         <React.Fragment>
             <CssBaseline/>
             <div>
-                <Tabs/>
+                <div className="display-mobile-menu">
+                    <MobileMenu/>
+                </div>
+                <div >
+                    <Tabs/>
+                </div>
             </div>
         </React.Fragment>
     );

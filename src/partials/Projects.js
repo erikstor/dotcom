@@ -18,7 +18,6 @@ import processPlusLogo from '../assest/img/processPlusLogo.png';
 import SIHLogo from '../assest/img/SIHLogo.png';
 import angularLogo from '../assest/img/angularLogo.png';
 import Link from "@material-ui/core/Link";
-import {Facebook} from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
     cardGrid: {
@@ -114,7 +113,7 @@ export default function Projects() {
                     <Typography
                         gutterBottom
                     >
-                        Advertencia: el contenido de estas p&aacute;ginas puede variar ya que no son es de mi propiedad.
+                        Advertencia: el contenido de estas p&aacute;ginas puede variar ya que no son de mi propiedad.
                         Se
                         presentan solo de modo informativo.
                     </Typography>
