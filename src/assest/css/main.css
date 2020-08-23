@@ -96,26 +96,50 @@ button.bg-verde-radioactivo {
 }
 
 /* Right*/
-p.icon-align-footer-r {
+p, div.icon-align-footer-r {
     text-align: right;
 }
 
 /*Middle*/
-p.icon-align-footer-m {
+p, div.icon-align-footer-m {
     text-align: center;
 }
 
 /*Left*/
-p.icon-align-footer-l {
+p, div.icon-align-footer-l {
     text-align: left;
 }
 
-img.size-gmail-icon{
-    width: 1.8em;
+div.espaciado-top-buttons-footer {
+    margin-top: 8px;
 }
 
-div.espaciado-top-buttons-footer{
-    margin-top: 8px;
+a.margin-l-1 {
+    margin-left: 1em;
+}
+
+div.margin-l-2-5 {
+    margin-left: 2.5em;
+}
+
+a.margin-l-negative-1 {
+    margin-left: -1em;
+}
+
+div.color-facebook {
+    color: #306EFF;
+}
+
+div.color-linkedIn {
+    color: #0073b1;
+}
+
+img.size-gmail-icon {
+    width: 1.6em;
+}
+
+img.size-instagram-icon {
+    width: 1.6em;
 }
 
 /*
@@ -137,8 +161,8 @@ div.bg-azul-progress {
     background-color: #79A1FF;
 }
 
-/*Color oscuro*/
-div.bg-azul-progress > div {
+/*Col oscuro*/
+div.borg-azul-progress > div {
     background-color: #306EFF;
 }
 
@@ -201,6 +225,17 @@ Media query's
         background-size: contain;
     }
 
+    div.margin-l-1 {
+        margin-left: 1em;
+    }
+
+    a.margin-l-negative-1 {
+        margin-left: -0.4em;
+    }
+
+    div.margin-l-2-5{
+        margin-left: -0.4em;
+    }
 }
 
 @media (min-width: 1200px) {
