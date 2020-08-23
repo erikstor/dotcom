@@ -61,7 +61,7 @@ export default function IconsFooter() {
 
     return (
         <div>
-            <Grid container item xs={12} spacing={0} direction="row"
+            <Grid container item xs={12} spacing={0} direction="row" className="espaciado-top-buttons-footer"
                   justify="center"
                   alignItems="center">
                 <FormRow/>

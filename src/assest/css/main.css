@@ -114,6 +114,10 @@ img.size-gmail-icon{
     width: 1.8em;
 }
 
+div.espaciado-top-buttons-footer{
+    margin-top: 8px;
+}
+
 /*
     Colores de las barras de progreso
 */

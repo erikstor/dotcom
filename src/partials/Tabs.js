@@ -50,6 +50,13 @@ TabPanel.propTypes = {
 };
 
 function a11yProps(index) {
+
+    window.scroll({
+        top: 0,
+        left: 100,
+        behavior: "auto"
+    });
+
     return {
         id: `simple-tab-${index}`,
         'aria-controls': `simple-tabpanel-${index}`,
