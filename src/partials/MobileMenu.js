@@ -7,14 +7,14 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 import Home from '@material-ui/icons/Home';
 import MenuBook from '@material-ui/icons/MenuBook';
 import Computer from '@material-ui/icons/Computer';
 import EmojiObjects from '@material-ui/icons/EmojiObjects';
 
 import menuIcon from '../assest/img/menu.png';
+import Link from "@material-ui/core/Link";
+import Logo from "../assest/img/logo.png";
 
 const useStyles = makeStyles({
     list: {
@@ -48,9 +48,7 @@ const menu = [
     }
 ]
 
-const navegate = id => {
-    document.getElementById(id).click();
-}
+
 
 export default function SwipeableTemporaryDrawer() {
     const classes = useStyles();
@@ -61,7 +59,10 @@ export default function SwipeableTemporaryDrawer() {
         right: false,
     });
 
-
+    const navegate = id => {
+        document.getElementById(id).click();
+        document.getElementById('SwipeableDrawer').click();
+    }
 
     const toggleDrawer = (anchor, open) => (event) => {
         if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -96,13 +97,20 @@ export default function SwipeableTemporaryDrawer() {
         <div>
             {['right'].map((anchor) => (
                 <React.Fragment key={anchor} >
+                    <div className="margin-logo position-logo">
+                        <Link href="http://www.erikstor.com/">
+                            <img className="logo-bar" src={Logo} alt=""/>
+                        </Link>
+                    </div>
                     <Button id="btnMenu" onClick={toggleDrawer(anchor, true)}>
                         <img src={menuIcon} className="size-img-menu"/>
                     </Button>
                     <SwipeableDrawer
+                        id='SwipeableDrawer'
                         anchor={anchor}
                         open={state[anchor]}
                         onClose={toggleDrawer(anchor, false)}
+                        onClick={toggleDrawer(anchor, false)}
                         onOpen={toggleDrawer(anchor, true)}
                     >
                        {list(anchor)}

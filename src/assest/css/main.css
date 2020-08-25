@@ -8,9 +8,13 @@ header.display-desktop-menu {
     display: none;
 }
 
+.position-logo {
+    position: absolute;
+    left: 2em;
+}
+
 .display-mobile-menu div {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     cursor: pointer;
 }
