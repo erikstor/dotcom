@@ -230,7 +230,9 @@ Media query's
 
     .display-mobile-menu {
         display: flex;
+        position: sticky;
         justify-content: flex-end;
+        top: 0;
     }
 
     .backgroundIndex {

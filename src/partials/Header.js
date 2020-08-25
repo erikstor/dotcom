@@ -10,10 +10,10 @@ export default function Header() {
         <React.Fragment>
             <CssBaseline/>
             <div>
-                <div className="display-mobile-menu">
+                <div className="display-mobile-menu position-mobile-menu">
                     <MobileMenu/>
                 </div>
-                <div >
+                <div>
                     <Tabs/>
                 </div>
             </div>

@@ -96,7 +96,7 @@ export default function SwipeableTemporaryDrawer() {
     return (
         <div>
             {['right'].map((anchor) => (
-                <React.Fragment key={anchor} >
+                <div key={anchor} >
                     <div className="margin-logo position-logo">
                         <Link href="http://www.erikstor.com/">
                             <img className="logo-bar" src={Logo} alt=""/>
@@ -106,6 +106,7 @@ export default function SwipeableTemporaryDrawer() {
                         <img src={menuIcon} className="size-img-menu"/>
                     </Button>
                     <SwipeableDrawer
+
                         id='SwipeableDrawer'
                         anchor={anchor}
                         open={state[anchor]}
@@ -115,7 +116,7 @@ export default function SwipeableTemporaryDrawer() {
                     >
                        {list(anchor)}
                     </SwipeableDrawer>
-                </React.Fragment>
+                </div>
             ))}
         </div>
     );
