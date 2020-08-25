@@ -9,14 +9,15 @@ header.display-desktop-menu {
 }
 
 .display-mobile-menu div {
-    background: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
     cursor: pointer;
 }
 
-
+img.size-img-menu {
+    width: 50%;
+}
 
 .backgroundIndex {
     background-image: url('../img/index.jpg');
