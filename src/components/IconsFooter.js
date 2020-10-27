@@ -10,7 +10,7 @@ import Link from "@material-ui/core/Link";
 const urlFacebook = "https://www.facebook.com/erikgram-2767021989978734";
 const urlInstagram = "https://www.instagram.com/erik.gram/";
 const urlLinkedIn = "https://www.linkedin.com/in/erikstorfranco/";
-const urlGmail = "https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=GTvVlcSDbSJZtxwNHBBMcZmGdbvcpvHpTMdfWcMdJdJcWQzvccNZzKZtGdtKQLGhmXlddGcsKxjfl";
+const urlGmail = "mailTo:erik.stor.franco@gmail.com";
 
 export default function IconsFooter() {
 
