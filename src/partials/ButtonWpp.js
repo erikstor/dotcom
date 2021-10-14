@@ -3,6 +3,9 @@ import {makeStyles} from '@material-ui/core/styles';
 import Fab from '@material-ui/core/Fab';
 import Link from '@material-ui/core/Link';
 import {WhatsApp} from "@material-ui/icons";
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 const useStyles = makeStyles((theme) => ({
     fab: {
@@ -22,7 +25,7 @@ export default function ButtonWpp() {
 
     return (
         <div className={classes.root}>
-            <Link target="_blank" href="https://wa.link/j5dc43">
+            <Link target="_blank" href={process.env.REACT_APP_WPP_LINK}>
                 <Fab aria-label="whatsapp" className={classes.fab}>
                     <WhatsApp/>
                 </Fab>

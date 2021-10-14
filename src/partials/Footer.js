@@ -3,11 +3,14 @@ import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
 import IconsFooter from "../components/IconsFooter";
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 function Copyright() {
     return ( 
         <Link   color = "inherit"
-                href = "https://erikstor.com/" 
+                href ={process.env.REACT_APP_DOMAIN}
         >
             <Typography variant = "body2"
                         color = "textSecondary"

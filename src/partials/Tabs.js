@@ -22,6 +22,9 @@ css e imagenes
 
 import '../assest/css/main.css'
 import Logo from '../assest/img/logo.png'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 function TabPanel(props) {
     const {children, value, index, ...other} = props;
@@ -92,7 +95,7 @@ export default function SimpleTabs() {
             <AppBar position="sticky" className="bg-app-bar display-desktop-menu">
                 <Toolbar>
                     <div className="margin-logo">
-                        <Link href="http://www.erikstor.com/">
+                        <Link href={process.env.REACT_APP_DOMAIN}>
                             <img className="logo-bar" src={Logo} alt=""/>
                         </Link>
                     </div>

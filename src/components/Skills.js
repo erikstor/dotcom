@@ -59,21 +59,21 @@ const skills = [
         nivel: "Intermedio",
         img: nodeLogo,
         estilos: "bg-verde-progress",
-        progreso: "60"
+        progreso: "70"
     },
     {
         nombre: "MySql",
         nivel: "Intermedio",
         img: mySqlLogo,
         estilos: "bg-azul-progress",
-        progreso: "60"
+        progreso: "70"
     },
     {
         nombre: "Postgres",
         nivel: "Intermedio",
         img: postgreSqlLogo,
         estilos: "bg-azul-progress",
-        progreso: "60"
+        progreso: "70"
     },
     {
         nombre: "Laravel",

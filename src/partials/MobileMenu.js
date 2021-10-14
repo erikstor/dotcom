@@ -16,6 +16,10 @@ import menuIcon from '../assest/img/menu.png';
 import Link from "@material-ui/core/Link";
 import Logo from "../assest/img/logo.png";
 
+import dotenv from 'dotenv'
+
+dotenv.config()
+
 const useStyles = makeStyles({
     list: {
         width: 250,
@@ -98,7 +102,7 @@ export default function SwipeableTemporaryDrawer() {
             {['right'].map((anchor) => (
                 <div key={anchor} >
                     <div className="margin-logo position-logo">
-                        <Link href="http://www.erikstor.com/">
+                        <Link href={process.env.REACT_APP_DOMAIN}>
                             <img className="logo-bar" src={Logo} alt=""/>
                         </Link>
                     </div>

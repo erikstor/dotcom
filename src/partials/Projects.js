@@ -17,6 +17,7 @@ import trendStudiosLogo from '../assest/img/trendStudios.png';
 import processPlusLogo from '../assest/img/processPlusLogo.png';
 import SIHLogo from '../assest/img/SIHLogo.png';
 import angularLogo from '../assest/img/angularLogo.png';
+import wihomLogo from '../assest/img/logo-wihom.png';
 import Link from "@material-ui/core/Link";
 
 const useStyles = makeStyles((theme) => ({
@@ -95,8 +96,14 @@ const cards = [
     {
         "nombre": "Portafolio de productos en angular",
         "descripcion": "Este portafolio es especial para mí, ya que gracias al profesor que impartió el curso, me decidí a iniciar la página web en la que te encuentras en este momento.",
-        "dominio": "https://erikstor.github.io/PortafolioDeProductosAngular/",
+        "dominio": "https://github.com/erikstor/PortafolioDeProductosAngular",
         "image": angularLogo
+    },
+    {
+        "nombre": "WiHom",
+        "descripcion": "La plataforma que esta ayudando a los administradores de propiedades horizonales a realizar su labor siendo mucho más eficientes",
+        "dominio": "https://wihom.com.co/",
+        "image": wihomLogo
     }
 ];
 
