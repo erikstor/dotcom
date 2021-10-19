@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fda60505e7ac5308fd3af7f632703f50",
+    "revision": "899c9bea471393e47fe3e78dce52ede2",
     "url": "/dotcom/index.html"
   },
   {
-    "revision": "5547a339574c161d0e76",
+    "revision": "1eafa2865bc3ff8e7d40",
     "url": "/dotcom/static/css/main.859d099a.chunk.css"
   },
   {
-    "revision": "e59c18837763b187d874",
-    "url": "/dotcom/static/js/2.c48f8ca5.chunk.js"
+    "revision": "7c59897a8ea242fb9688",
+    "url": "/dotcom/static/js/2.238cfa8f.chunk.js"
   },
   {
     "revision": "0749163b59fbee32225059cb60c18af6",
-    "url": "/dotcom/static/js/2.c48f8ca5.chunk.js.LICENSE.txt"
+    "url": "/dotcom/static/js/2.238cfa8f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "5547a339574c161d0e76",
-    "url": "/dotcom/static/js/main.566ecae6.chunk.js"
+    "revision": "1eafa2865bc3ff8e7d40",
+    "url": "/dotcom/static/js/main.86745fc0.chunk.js"
   },
   {
     "revision": "51e1a85e48a28601ca76",
@@ -34,6 +34,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "32624a8119425b3682055f38e8ac7c98",
     "url": "/dotcom/static/media/bannerHistoria_1.32624a81.jpg"
+  },
+  {
+    "revision": "78072b53de5f7aef28a13bb3b565e2ad",
+    "url": "/dotcom/static/media/ceawebsystem_logo.78072b53.png"
   },
   {
     "revision": "c9421be52fe48fdf04839b53f8e9f1d4",
@@ -62,6 +66,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "0784bf3a1cae84fb8ad9285c838831b5",
     "url": "/dotcom/static/media/laravelLogo.0784bf3a.png"
+  },
+  {
+    "revision": "f47b8554baebb7680afc78a62d3002f9",
+    "url": "/dotcom/static/media/logo_star_solutions.f47b8554.png"
   },
   {
     "revision": "65dde6a358af19d42baeb73a1c1d6c75",

@@ -1,25 +1,27 @@
 {
   "files": {
     "main.css": "/dotcom/static/css/main.859d099a.chunk.css",
-    "main.js": "/dotcom/static/js/main.566ecae6.chunk.js",
-    "main.js.map": "/dotcom/static/js/main.566ecae6.chunk.js.map",
+    "main.js": "/dotcom/static/js/main.86745fc0.chunk.js",
+    "main.js.map": "/dotcom/static/js/main.86745fc0.chunk.js.map",
     "runtime-main.js": "/dotcom/static/js/runtime-main.4cae6645.js",
     "runtime-main.js.map": "/dotcom/static/js/runtime-main.4cae6645.js.map",
-    "static/js/2.c48f8ca5.chunk.js": "/dotcom/static/js/2.c48f8ca5.chunk.js",
-    "static/js/2.c48f8ca5.chunk.js.map": "/dotcom/static/js/2.c48f8ca5.chunk.js.map",
+    "static/js/2.238cfa8f.chunk.js": "/dotcom/static/js/2.238cfa8f.chunk.js",
+    "static/js/2.238cfa8f.chunk.js.map": "/dotcom/static/js/2.238cfa8f.chunk.js.map",
     "index.html": "/dotcom/index.html",
-    "precache-manifest.f1cbf5fd57dcaba0d30892b4307ea60d.js": "/dotcom/precache-manifest.f1cbf5fd57dcaba0d30892b4307ea60d.js",
+    "precache-manifest.d382dce359d9703c651956a08edd5140.js": "/dotcom/precache-manifest.d382dce359d9703c651956a08edd5140.js",
     "service-worker.js": "/dotcom/service-worker.js",
     "static/css/main.859d099a.chunk.css.map": "/dotcom/static/css/main.859d099a.chunk.css.map",
-    "static/js/2.c48f8ca5.chunk.js.LICENSE.txt": "/dotcom/static/js/2.c48f8ca5.chunk.js.LICENSE.txt",
+    "static/js/2.238cfa8f.chunk.js.LICENSE.txt": "/dotcom/static/js/2.238cfa8f.chunk.js.LICENSE.txt",
     "static/media/SIHLogo.png": "/dotcom/static/media/SIHLogo.ffb45bdd.png",
     "static/media/main.css": "/dotcom/static/media/teamNexura.7ff8a359.jpg",
+    "static/media/ceawebsystem_logo.png": "/dotcom/static/media/ceawebsystem_logo.78072b53.png",
     "static/media/css3Logo.png": "/dotcom/static/media/css3Logo.c9421be5.png",
     "static/media/gmail.svg": "/dotcom/static/media/gmail.b225d3c0.svg",
     "static/media/instagram.svg": "/dotcom/static/media/instagram.46ce74c2.svg",
     "static/media/jQueryLogo.png": "/dotcom/static/media/jQueryLogo.42a361f9.png",
     "static/media/javacriptLogo.png": "/dotcom/static/media/javacriptLogo.7b55235a.png",
     "static/media/laravelLogo.png": "/dotcom/static/media/laravelLogo.0784bf3a.png",
+    "static/media/logo_star_solutions.png": "/dotcom/static/media/logo_star_solutions.f47b8554.png",
     "static/media/mySqlLogo.png": "/dotcom/static/media/mySqlLogo.65dde6a3.png",
     "static/media/nodejsLogo.png": "/dotcom/static/media/nodejsLogo.601ca06a.png",
     "static/media/nxPlatform.png": "/dotcom/static/media/nxPlatform.e559d555.png",
@@ -32,8 +34,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.4cae6645.js",
-    "static/js/2.c48f8ca5.chunk.js",
+    "static/js/2.238cfa8f.chunk.js",
     "static/css/main.859d099a.chunk.css",
-    "static/js/main.566ecae6.chunk.js"
+    "static/js/main.86745fc0.chunk.js"
   ]
 }
