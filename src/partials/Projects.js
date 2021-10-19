@@ -18,6 +18,10 @@ import processPlusLogo from '../assest/img/processPlusLogo.png';
 import SIHLogo from '../assest/img/SIHLogo.png';
 import angularLogo from '../assest/img/angularLogo.png';
 import wihomLogo from '../assest/img/logo-wihom.png';
+import sincronLogo from '../assest/img/sincron_logo.png';
+import starSolutionsLogo from '../assest/img/logo_star_solutions.png';
+import ceaWebSystemLogo from '../assest/img/ceawebsystem_logo.png';
+
 import Link from "@material-ui/core/Link";
 
 const useStyles = makeStyles((theme) => ({
@@ -32,7 +36,8 @@ const useStyles = makeStyles((theme) => ({
     },
     cardMedia: {
         paddingTop: '56.25%', // 16:9
-        backgroundSize: 'contain'
+        backgroundSize: 'contain',
+        margin: '20px'
     },
     cardContent: {
         flexGrow: 1,
@@ -43,19 +48,22 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
+// http://www.webksi.com/
+
+
 const cards = [
     {
-        "nombre": "Gfiles - Solución cloud para gestión documental",
-        "descripcion": "GFiles se trataba de un gestor documental “Todo en uno”, en donde una entidad podía gestionar de una forma ultra eficiente todos los documentos que manejase.",
-        "dominio": "https://www.gfiles.co/",
-        "image": gfilesLogo
+        "nombre": "Sistema de elección del personero",
+        "descripcion": "Durante mis prácticas profesionales, tuve la oportunidad de ingresar a una institución educativa, supremamente reconocida en mi ciudad, para la cual pude desarrollar un sistema de elección del personero",
+        "dominio": "https://colegiosarquidiocesanos.edu.co/web/",
+        "image": SIHLogo
 
     },
     {
-        "nombre": "Nexura Platform",
-        "descripcion": "Nexura Cloud Platform es una solución web personalizable de acuerdo a las necesidades de cada entidad, que ayuda a implementar estrategias de gobierno digital y administrar de forma centralizada múltiples dependencias, secretarías o entidades conexas.",
-        "dominio": "https://www.nexura.com/publicaciones/129392/nexura-cloud-platform/",
-        "image": nxPlatformLogo
+        "nombre": "Sistema de inventario de préstamos",
+        "descripcion": "Durante mis prácticas profesionales, tuve la oportunidad de ingresar a una institución educativa, supremamente reconocida en mi ciudad, para la cual pude desarrollar un sistema de inventario de préstamos",
+        "dominio": "https://colegiosarquidiocesanos.edu.co/web/",
+        "image": SIHLogo
 
     },
     {
@@ -73,17 +81,17 @@ const cards = [
 
     },
     {
-        "nombre": "Sistema de elección del personero",
-        "descripcion": "Durante mis prácticas profesionales, tuve la oportunidad de ingresar a una institución educativa, supremamente reconocida en mi ciudad, para la cual pude desarrollar un sistema de elección del personero",
-        "dominio": "https://colegiosarquidiocesanos.edu.co/web/",
-        "image": SIHLogo
+        "nombre": "Gfiles - Solución cloud para gestión documental",
+        "descripcion": "GFiles se trataba de un gestor documental “Todo en uno”, en donde una entidad podía gestionar de una forma ultra eficiente todos los documentos que manejase.",
+        "dominio": "https://www.gfiles.co/",
+        "image": gfilesLogo
 
     },
     {
-        "nombre": "Sistema de inventario de préstamos",
-        "descripcion": "Durante mis prácticas profesionales, tuve la oportunidad de ingresar a una institución educativa, supremamente reconocida en mi ciudad, para la cual pude desarrollar un sistema de inventario de préstamos",
-        "dominio": "https://colegiosarquidiocesanos.edu.co/web/",
-        "image": SIHLogo
+        "nombre": "Nexura Platform",
+        "descripcion": "Nexura Cloud Platform es una solución web personalizable de acuerdo a las necesidades de cada entidad, que ayuda a implementar estrategias de gobierno digital y administrar de forma centralizada múltiples dependencias, secretarías o entidades conexas.",
+        "dominio": "https://www.nexura.com/publicaciones/129392/nexura-cloud-platform/",
+        "image": nxPlatformLogo
 
     },
     {
@@ -98,6 +106,24 @@ const cards = [
         "descripcion": "Este portafolio es especial para mí, ya que gracias al profesor que impartió el curso, me decidí a iniciar la página web en la que te encuentras en este momento.",
         "dominio": "https://github.com/erikstor/PortafolioDeProductosAngular",
         "image": angularLogo
+    },
+    {
+        "nombre": "Sincron SMES",
+        "descripcion": "El Sistema de Ejecución de Manufactura ( Sistema MES ) Manufacturing Execution System es una solución 100% Web que permite una total transformación digital al monitorear el proceso, buscando optimizar y reducir costos que mejoren la productividad y rentabilidad de su empresa.",
+        "dominio": "https://www.sincron.co/",
+        "image": sincronLogo
+    },
+    {
+        "nombre": "Soluciones Start",
+        "descripcion": "En esta empresa tuve la oportunidad de desarrollar todo tipo de proyectos entre ellos un sistema de solucitudes para el soporte técnico de celulares y una aplicación móvil para la reservación de citas en la peluqueria",
+        "dominio": "https://solucionesstar.com/",
+        "image": starSolutionsLogo
+    },
+    {
+        "nombre": "CeaWebSystems ",
+        "descripcion": "Ellos fueron mi primer cliente mayoritariamente anglosajon donde pude realizar un par de proyectos web que por las clausulas de confidencialidad no puedo mencionar, fue interesante trabajar con personas de diferentes nacionalidades y multilenguajes",
+        "dominio": "https://ceawebsystems.com/",
+        "image": ceaWebSystemLogo
     },
     {
         "nombre": "WiHom",
