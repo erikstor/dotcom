@@ -1,142 +1,84 @@
-# Erik Stor - Portfolio Profesional
+# DotcomIA - Portfolio de Erik Stor
 
-Portfolio personal modernizado con Next.js y Material-UI, diseñado para entornos profesionales como LinkedIn.
+Portfolio profesional de Erik Stor, desarrollador web backend con experiencia en tecnologías modernas.
 
-## 🚀 Características
+## 🚀 Despliegue en GitHub Pages
 
-- **Next.js 14** - Metaframework de React con App Router
-- **Material-UI v5** - Componentes modernos y accesibles
-- **Diseño Responsivo** - Optimizado para todos los dispositivos
-- **Tema Profesional** - Colores sobrios y tipografía clara
-- **SEO Optimizado** - Metadatos y estructura semántica
-- **Performance** - Optimización de imágenes y carga rápida
+Este proyecto está configurado para desplegarse automáticamente en GitHub Pages cuando se hace push a la rama `master`.
 
-## 📋 Secciones
+### Configuración Automática
 
-- **Inicio** - Presentación personal y navegación
-- **Historia** - Trayectoria profesional y experiencia
-- **Habilidades** - Tecnologías y herramientas dominadas
-- **Proyectos** - Portfolio de trabajos realizados
+1. **GitHub Actions**: El proyecto incluye un workflow automático en `.github/workflows/deploy.yml`
+2. **Configuración de Next.js**: Optimizado para exportación estática con `basePath` y `assetPrefix`
+3. **Rutas de Assets**: Todas las imágenes y recursos usan rutas relativas correctas para GitHub Pages
 
-## 🛠️ Tecnologías Utilizadas
+### Configuración Manual en GitHub
 
-### Frontend
-- React 18
-- Next.js 14
-- Material-UI v5
-- Emotion (CSS-in-JS)
+1. Ve a **Settings** > **Pages** en tu repositorio
+2. En **Source**, selecciona **GitHub Actions**
+3. El workflow se ejecutará automáticamente en cada push a `master`
 
-### Desarrollo
-- ESLint
-- Prettier
-- TypeScript (opcional)
+### Estructura del Proyecto
 
-## 🚀 Instalación y Uso
-
-### Prerrequisitos
-- Node.js 18+ 
-- npm o yarn
-
-### Instalación
-
-1. Clonar el repositorio:
-```bash
-git clone <repository-url>
-cd dotcomia-nextjs
 ```
-
-2. Instalar dependencias:
-```bash
-npm install
+dotcomIA/
+├── app/                    # Páginas de Next.js App Router
+├── components/             # Componentes React
+│   ├── sections/          # Secciones del portfolio
+│   └── ...
+├── public/                # Assets estáticos
+│   └── assets/img/        # Imágenes
+├── utils/                 # Utilidades
+│   └── paths.js          # Helper para rutas de assets
+├── .github/workflows/     # GitHub Actions
+└── out/                   # Build estático (generado)
 ```
-
-3. Ejecutar en desarrollo:
-```bash
-npm run dev
-```
-
-4. Abrir [http://localhost:3000](http://localhost:3000)
 
 ### Scripts Disponibles
 
 - `npm run dev` - Servidor de desarrollo
-- `npm run build` - Construir para producción
+- `npm run build` - Build para producción
 - `npm run start` - Servidor de producción
-- `npm run lint` - Verificar código
+- `npm run lint` - Linting del código
 
-## 📁 Estructura del Proyecto
+### Tecnologías Utilizadas
 
-```
-├── app/                    # App Router de Next.js
-│   ├── layout.js          # Layout principal
-│   └── page.js            # Página principal
-├── components/            # Componentes reutilizables
-│   ├── Header.js          # Navegación principal
-│   ├── Footer.js          # Pie de página
-│   └── sections/          # Secciones de contenido
-├── public/                # Archivos estáticos
-│   └── assets/           # Imágenes y recursos
-└── package.json          # Dependencias y scripts
-```
+- **Frontend**: Next.js 14, React 18, Material-UI
+- **Estilos**: Emotion, CSS-in-JS
+- **Despliegue**: GitHub Pages, GitHub Actions
+- **Build**: Next.js Static Export
 
-## 🎨 Personalización
+### Solución de Problemas
 
-### Tema
-El tema se puede personalizar en `app/layout.js` modificando el objeto `theme`:
+#### Imágenes no se cargan
+- Verifica que las rutas usen `getImagePath()` de `utils/paths.js`
+- Asegúrate de que el `basePath` en `next.config.js` sea correcto
 
-```javascript
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#2c3e50', // Color principal
-    },
-    // ... más configuraciones
-  },
-});
-```
+#### Estilos no se aplican
+- Verifica que el `assetPrefix` en `next.config.js` esté configurado
+- Asegúrate de que el archivo `.nojekyll` esté presente en `public/`
 
-### Contenido
-- **Datos personales**: Modificar en los componentes de sección
-- **Proyectos**: Editar array en `components/sections/ProjectsSection.js`
-- **Habilidades**: Actualizar en `components/sections/SkillsSection.js`
+#### Build falla
+- Ejecuta `npm install` para instalar dependencias
+- Verifica que Node.js sea versión 18 o superior
 
-## 📱 Responsive Design
+## 📝 Notas de Desarrollo
 
-El sitio está optimizado para:
-- 📱 Móviles (320px+)
-- 📱 Tablets (768px+)
-- 💻 Desktop (1024px+)
-- 🖥️ Pantallas grandes (1440px+)
+Este portfolio fue desarrollado utilizando técnicas de **Prompt Engineering** y demuestra las habilidades de desarrollo backend y frontend de Erik Stor.
 
-## 🔧 Configuración de Producción
+### Características
 
-### Variables de Entorno
-Crear archivo `.env.local`:
-```env
-NEXT_PUBLIC_SITE_URL=https://tu-dominio.com
-```
+- ✅ Diseño responsive y moderno
+- ✅ Optimización para SEO
+- ✅ Carga rápida con imágenes optimizadas
+- ✅ Navegación fluida entre secciones
+- ✅ Despliegue automático en GitHub Pages
 
-### Deploy
-El proyecto está configurado para deploy estático:
+## 🔗 Enlaces
 
-```bash
-npm run build
-```
-
-Los archivos generados estarán en la carpeta `out/`.
-
-## 📄 Licencia
-
-Este proyecto es de uso personal. Todos los derechos reservados.
-
-## 👨‍💻 Autor
-
-**Erik Stor**
-- Desarrollador Full Stack
-- Cali, Colombia
-- [LinkedIn](https://linkedin.com/in/erikstor)
-- [Email](mailto:erikstor@gmail.com)
+- **Sitio Web**: https://erikstor.github.io/dotcomIA
+- **Repositorio**: https://github.com/erikstor/dotcomIA
 
 ---
 
-*Desarrollado con ❤️ usando Next.js y Material-UI*
+Desarrollado con ❤️ por Erik Stor

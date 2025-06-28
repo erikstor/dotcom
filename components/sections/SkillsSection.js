@@ -14,62 +14,63 @@ import {
 } from '@mui/material';
 import Image from 'next/image';
 import { useState } from 'react';
+import { getImagePath } from '../../utils/paths';
 
 const skillsByCategory = {
   lenguajes: [
     {
       name: "JavaScript",
       level: "Avanzado",
-      image: "/assets/img/javacriptLogo.png",
+      image: getImagePath("/assets/img/javacriptLogo.png"),
       progress: 90,
       color: "#F7DF1E"
     },
     {
       name: "TypeScript",
       level: "Avanzado",
-      image: "/assets/img/typescript-logo.png",
+      image: getImagePath("/assets/img/typescript-logo.png"),
       progress: 90,
       color: "#007acc"
     },
     {
       name: "GoLang",
       level: "Intermedio",
-      image: "/assets/img/golang-logo.png",
+      image: getImagePath("/assets/img/golang-logo.png"),
       progress: 70,
       color: "#42bedf"
     },
     {
       name: "Python",
       level: "Intermedio",
-      image: "/assets/img/python-logo.png",
+      image: getImagePath("/assets/img/python-logo.png"),
       progress: 70,
       color: "#376e9d"
     },
     {
       name: "Java",
       level: "Básico",
-      image: "/assets/img/java-logo.png",
+      image: getImagePath("/assets/img/java-logo.png"),
       progress: 60,
       color: "#eb3c3d"
     },
     {
       name: "PHP",
       level: "Avanzado",
-      image: "/assets/img/phpLogo.png",
+      image: getImagePath("/assets/img/phpLogo.png"),
       progress: 80,
       color: "#777BB4"
     },
     {
       name: "HTML 5",
       level: "Avanzado",
-      image: "/assets/img/html5Logo.png",
+      image: getImagePath("/assets/img/html5Logo.png"),
       progress: 80,
       color: "#E34F26"
     },
     {
       name: "CSS 3",
       level: "Intermedio",
-      image: "/assets/img/css3Logo.png",
+      image: getImagePath("/assets/img/css3Logo.png"),
       progress: 70,
       color: "#1572B6"
     }
@@ -78,35 +79,35 @@ const skillsByCategory = {
     {
       name: "Node.js",
       level: "Avanzado",
-      image: "/assets/img/nodejsLogo.png",
+      image: getImagePath("/assets/img/nodejsLogo.png"),
       progress: 90,
       color: "#339933"
     },
     {
       name: "CDK",
       level: "Intermedio",
-      image: "/assets/img/cdk-logo.png",
+      image: getImagePath("/assets/img/cdk-logo.png"),
       progress: 75,
       color: "#237d9f"
     },
     {
       name: "CloudFormation",
       level: "Intermedio",
-      image: "/assets/img/cloudformation-logo.png",
+      image: getImagePath("/assets/img/cloudformation-logo.png"),
       progress: 75,
       color: "#339933"
     },
     {
       name: "Docker",
       level: "Intermedio",
-      image: "/assets/img/docker-logo.png",
+      image: getImagePath("/assets/img/docker-logo.png"),
       progress: 65,
       color: "#1d63ee"
     },
     {
       name: "Kubernetes",
       level: "Básico",
-      image: "/assets/img/kubernetes-logo.png",
+      image: getImagePath("/assets/img/kubernetes-logo.png"),
       progress: 45,
       color: "#326ce5"
     }
@@ -115,70 +116,70 @@ const skillsByCategory = {
     {
       name: "Serverless",
       level: "Avanzado",
-      image: "/assets/img/serverless-logo.png",
+      image: getImagePath("/assets/img/serverless-logo.png"),
       progress: 80,
       color: "#fd5750"
     },
     {
       name: "NestJS",
       level: "Intermedio",
-      image: "/assets/img/nestjs-logo.png",
+      image: getImagePath("/assets/img/nestjs-logo.png"),
       progress: 80,
       color: "#e0234e"
     },
     {
       name: "Fiber",
       level: "Intermedio",
-      image: "/assets/img/fiber-logo.png",
+      image: getImagePath("/assets/img/fiber-logo.png"),
       progress: 60,
       color: "#42bedf"
     },
     {
       name: "Spring Boot",
       level: "Intermedio",
-      image: "/assets/img/spring-boot-logo.png",
+      image: getImagePath("/assets/img/spring-boot-logo.png"),
       progress: 60,
       color: "#6db33c"
     },
     {
       name: "FastApi",
       level: "Intermedio",
-      image: "/assets/img/fastapi-logo.png",
+      image: getImagePath("/assets/img/fastapi-logo.png"),
       progress: 60,
       color: "#05998b"
     },
     {
       name: "Django",
       level: "Intermedio",
-      image: "/assets/img/django-logo.png",
+      image: getImagePath("/assets/img/django-logo.png"),
       progress: 60,
       color: "#092e20"
     },
     {
       name: "Laravel",
       level: "Básico",
-      image: "/assets/img/laravelLogo.png",
+      image: getImagePath("/assets/img/laravelLogo.png"),
       progress: 60,
       color: "#FF2D20"
     },
     {
       name: "React",
       level: "Básico",
-      image: "/assets/img/reactLogo.png",
+      image: getImagePath("/assets/img/reactLogo.png"),
       progress: 50,
       color: "#61DAFB"
     },
     {
       name: "Next.js",
       level: "Básico",
-      image: "/assets/img/nextjs-logo.png",
+      image: getImagePath("/assets/img/nextjs-logo.png"),
       progress: 50,
       color: "#000000"
     },
     {
       name: "Angular",
       level: "Intermedio",
-      image: "/assets/img/angularLogo.png",
+      image: getImagePath("/assets/img/angularLogo.png"),
       progress: 60,
       color: "#DD0031"
     },
@@ -187,49 +188,49 @@ const skillsByCategory = {
     {
       name: "MySQL",
       level: "Avanzado",
-      image: "/assets/img/mysql-logo.png",
+      image: getImagePath("/assets/img/mysql-logo.png"),
       progress: 90,
       color: "#e49005"
     },
     {
       name: "PostgreSQL",
       level: "Avanzado",
-      image: "/assets/img/postgres-logo.png",
+      image: getImagePath("/assets/img/postgres-logo.png"),
       progress: 90,
       color: "#2f6792"
     },
     {
       name: "LiquidBase",
       level: "Intermedio",
-      image: "/assets/img/liquidBase-logo.png",
+      image: getImagePath("/assets/img/liquidBase-logo.png"),
       progress: 70,
       color: "#2962ff"
     },
     {
       name: "DynamoDB",
       level: "Avanzado",
-      image: "/assets/img/dynamo-logo.png",
+      image: getImagePath("/assets/img/dynamo-logo.png"),
       progress: 90,
       color: "#1a476f"
     },
     {
       name: "Redis",
       level: "Intermedio",
-      image: "/assets/img/redis-logo.png",
+      image: getImagePath("/assets/img/redis-logo.png"),
       progress: 70,
       color: "#d72c20"
     },
     {
       name: "MongoDB",
       level: "Avanzado",
-      image: "/assets/img/mongodb-logo.png",
+      image: getImagePath("/assets/img/mongodb-logo.png"),
       progress: 80,
       color: "#4faa41"
     },
     {
       name: "Sql Lite",
       level: "Intermedio",
-      image: "/assets/img/sql-lite-logo.png",
+      image: getImagePath("/assets/img/sql-lite-logo.png"),
       progress: 70,
       color: "#82ccef"
     },
@@ -238,14 +239,14 @@ const skillsByCategory = {
     {
       name: "AWS",
       level: "Básico",
-      image: "/assets/img/aws-logo.png",
+      image: getImagePath("/assets/img/aws-logo.png"),
       progress: 80,
       color: "#FF9900"
     },
     {
       name: "Google Cloud",
       level: "Básico",
-      image: "/assets/img/gcp-logo.png",
+      image: getImagePath("/assets/img/gcp-logo.png"),
       progress: 35,
       color: "#4285F4"
     },

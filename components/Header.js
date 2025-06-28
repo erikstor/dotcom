@@ -18,6 +18,7 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import Image from 'next/image';
+import { getImagePath } from '../utils/paths';
 
 export default function Header({ activeTab, onTabChange }) {
   const theme = useTheme();
@@ -83,7 +84,7 @@ export default function Header({ activeTab, onTabChange }) {
         <Toolbar sx={{ justifyContent: 'space-between' }}>
           <Link href="/" sx={{ textDecoration: 'none' }}>
             <Image
-              src="/assets/img/logo.png"
+              src={getImagePath("/assets/img/logo.png")}
               alt="Erik Stor Logo"
               width={140}
               height={56}

@@ -9,6 +9,7 @@ import {
   Typography,
   useTheme
 } from '@mui/material';
+import { getImagePath } from '../../utils/paths';
 
 export default function HomeSection({ onNavigate }) {
   const theme = useTheme();
@@ -38,7 +39,7 @@ export default function HomeSection({ onNavigate }) {
           right: 0,
           bottom: 0,
           opacity: 0.1,
-          backgroundImage: 'url(/assets/img/index.jpg)',
+          backgroundImage: `url(${getImagePath('/assets/img/index.jpg')})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',

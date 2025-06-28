@@ -11,6 +11,7 @@ import {
   Typography,
   useTheme
 } from '@mui/material';
+import { getImagePath } from '../../utils/paths';
 
 export default function HistorySection() {
   const theme = useTheme();
@@ -31,7 +32,7 @@ export default function HistorySection() {
             borderRadius: 3,
             overflow: 'hidden',
             mb: 6,
-            backgroundImage: 'url(/assets/img/bannerHistoria.jpg)',
+            backgroundImage: `url(${getImagePath('/assets/img/bannerHistoria.jpg')})`,
             backgroundSize: 'cover',
             backgroundPosition: '0 15%',
             display: 'flex',
@@ -270,7 +271,7 @@ export default function HistorySection() {
                 sx={{
                   height: 200,
                   borderRadius: 2,
-                  backgroundImage: 'url(/assets/img/bannerHistoria_1.jpg)',
+                  backgroundImage: `url(${getImagePath('/assets/img/bannerHistoria_1.jpg')})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   border: '1px solid',
@@ -289,7 +290,7 @@ export default function HistorySection() {
                 sx={{
                   height: 200,
                   borderRadius: 2,
-                  backgroundImage: 'url(/assets/img/sinco.png)',
+                  backgroundImage: `url(${getImagePath('/assets/img/sinco.png')})`,
                   backgroundSize: 'contain',
                   backgroundPosition: 'center',
                   backgroundRepeat: 'no-repeat',
@@ -310,7 +311,7 @@ export default function HistorySection() {
                 sx={{
                   height: 200,
                   borderRadius: 2,
-                  backgroundImage: 'url(/assets/img/teamNexura.jpg)',
+                  backgroundImage: `url(${getImagePath('/assets/img/teamNexura.jpg')})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   border: '1px solid',
