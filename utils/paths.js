@@ -6,7 +6,7 @@ export function getBasePath() {
   }
   
   // En producción (GitHub Pages), usar el basePath del repositorio
-  return '/dotcomIA';
+  return '/dotcom';
 }
 
 // Función para obtener la ruta correcta de un asset

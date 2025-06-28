@@ -76,8 +76,8 @@ Este portfolio fue desarrollado utilizando técnicas de **Prompt Engineering** y
 
 ## 🔗 Enlaces
 
-- **Sitio Web**: https://erikstor.github.io/dotcomIA
-- **Repositorio**: https://github.com/erikstor/dotcomIA
+- **Sitio Web**: https://erikstor.github.io/dotcom
+- **Repositorio**: https://github.com/erikstor/dotcom
 
 ---
 
