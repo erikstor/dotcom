@@ -2,8 +2,8 @@
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
-  basePath: '/dotcomIA',
-  assetPrefix: '/dotcomIA/',
+  basePath: '/dotcom',
+  assetPrefix: '/dotcom/',
   images: {
     unoptimized: true
   }
