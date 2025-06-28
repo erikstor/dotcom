@@ -2,6 +2,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import { Inter } from 'next/font/google';
 import ClientThemeProvider from '../components/ClientThemeProvider';
+import { getAssetPath } from '../utils/paths';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -11,11 +12,24 @@ export const metadata = {
   keywords: 'desarrollador, backend, web, JavaScript, TypeScript, GoLang, Python, SQL, NoSQL, Docker, Kubernetes, AWS, Azure, DevOps',
   authors: [{ name: 'Erik Stor' }],
   viewport: 'width=device-width, initial-scale=1',
+  icons: {
+    icon: [
+      { url: getAssetPath('/favicon.ico'), sizes: 'any' },
+      { url: getAssetPath('/favicon.ico'), type: 'image/x-icon' }
+    ],
+    shortcut: getAssetPath('/favicon.ico'),
+    apple: getAssetPath('/favicon.ico'),
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
+      <head>
+        <link rel="icon" href={getAssetPath('/favicon.ico')} />
+        <link rel="shortcut icon" href={getAssetPath('/favicon.ico')} />
+        <link rel="apple-touch-icon" href={getAssetPath('/favicon.ico')} />
+      </head>
       <body className={inter.className}>
         <AppRouterCacheProvider>
           <ClientThemeProvider>
