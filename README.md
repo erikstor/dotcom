@@ -1,68 +1,142 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Erik Stor - Portfolio Profesional
 
-## Available Scripts
+Portfolio personal modernizado con Next.js y Material-UI, diseñado para entornos profesionales como LinkedIn.
 
-In the project directory, you can run:
+## 🚀 Características
 
-### `npm start`
+- **Next.js 14** - Metaframework de React con App Router
+- **Material-UI v5** - Componentes modernos y accesibles
+- **Diseño Responsivo** - Optimizado para todos los dispositivos
+- **Tema Profesional** - Colores sobrios y tipografía clara
+- **SEO Optimizado** - Metadatos y estructura semántica
+- **Performance** - Optimización de imágenes y carga rápida
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 📋 Secciones
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- **Inicio** - Presentación personal y navegación
+- **Historia** - Trayectoria profesional y experiencia
+- **Habilidades** - Tecnologías y herramientas dominadas
+- **Proyectos** - Portfolio de trabajos realizados
 
-### `npm test`
+## 🛠️ Tecnologías Utilizadas
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Frontend
+- React 18
+- Next.js 14
+- Material-UI v5
+- Emotion (CSS-in-JS)
 
-### `npm run build`
+### Desarrollo
+- ESLint
+- Prettier
+- TypeScript (opcional)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🚀 Instalación y Uso
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Prerrequisitos
+- Node.js 18+ 
+- npm o yarn
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Instalación
 
-### `npm run eject`
+1. Clonar el repositorio:
+```bash
+git clone <repository-url>
+cd dotcomia-nextjs
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+2. Instalar dependencias:
+```bash
+npm install
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Ejecutar en desarrollo:
+```bash
+npm run dev
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+4. Abrir [http://localhost:3000](http://localhost:3000)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Scripts Disponibles
 
-## Learn More
+- `npm run dev` - Servidor de desarrollo
+- `npm run build` - Construir para producción
+- `npm run start` - Servidor de producción
+- `npm run lint` - Verificar código
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📁 Estructura del Proyecto
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+├── app/                    # App Router de Next.js
+│   ├── layout.js          # Layout principal
+│   └── page.js            # Página principal
+├── components/            # Componentes reutilizables
+│   ├── Header.js          # Navegación principal
+│   ├── Footer.js          # Pie de página
+│   └── sections/          # Secciones de contenido
+├── public/                # Archivos estáticos
+│   └── assets/           # Imágenes y recursos
+└── package.json          # Dependencias y scripts
+```
 
-### Code Splitting
+## 🎨 Personalización
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+### Tema
+El tema se puede personalizar en `app/layout.js` modificando el objeto `theme`:
 
-### Analyzing the Bundle Size
+```javascript
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#2c3e50', // Color principal
+    },
+    // ... más configuraciones
+  },
+});
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+### Contenido
+- **Datos personales**: Modificar en los componentes de sección
+- **Proyectos**: Editar array en `components/sections/ProjectsSection.js`
+- **Habilidades**: Actualizar en `components/sections/SkillsSection.js`
 
-### Making a Progressive Web App
+## 📱 Responsive Design
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+El sitio está optimizado para:
+- 📱 Móviles (320px+)
+- 📱 Tablets (768px+)
+- 💻 Desktop (1024px+)
+- 🖥️ Pantallas grandes (1440px+)
 
-### Advanced Configuration
+## 🔧 Configuración de Producción
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+### Variables de Entorno
+Crear archivo `.env.local`:
+```env
+NEXT_PUBLIC_SITE_URL=https://tu-dominio.com
+```
 
-### Deployment
+### Deploy
+El proyecto está configurado para deploy estático:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+```bash
+npm run build
+```
 
-### `npm run build` fails to minify
+Los archivos generados estarán en la carpeta `out/`.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## 📄 Licencia
+
+Este proyecto es de uso personal. Todos los derechos reservados.
+
+## 👨‍💻 Autor
+
+**Erik Stor**
+- Desarrollador Full Stack
+- Cali, Colombia
+- [LinkedIn](https://linkedin.com/in/erikstor)
+- [Email](mailto:erikstor@gmail.com)
+
+---
+
+*Desarrollado con ❤️ usando Next.js y Material-UI*
