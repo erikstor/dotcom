@@ -11,7 +11,6 @@ export const metadata = {
   description: 'Portfolio profesional de Erik Stor, desarrollador web backend con experiencia en tecnologías modernas.',
   keywords: 'desarrollador, backend, web, JavaScript, TypeScript, GoLang, Python, SQL, NoSQL, Docker, Kubernetes, AWS, Azure, DevOps',
   authors: [{ name: 'Erik Stor' }],
-  viewport: 'width=device-width, initial-scale=1',
   icons: {
     icon: [
       { url: getAssetPath('/favicon.ico'), sizes: 'any' },
@@ -20,6 +19,11 @@ export const metadata = {
     shortcut: getAssetPath('/favicon.ico'),
     apple: getAssetPath('/favicon.ico'),
   },
+};
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
 };
 
 export default function RootLayout({ children }) {

@@ -18,6 +18,7 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import { getImagePath } from '../utils/paths';
 
 export default function Header({ activeTab, onTabChange }) {
@@ -82,51 +83,71 @@ export default function Header({ activeTab, onTabChange }) {
         }}
       >
         <Toolbar sx={{ justifyContent: 'space-between' }}>
-          <Link href="/" sx={{ textDecoration: 'none' }}>
-            <Image
-              src={getImagePath("/assets/img/logo.png")}
-              alt="Erik Stor Logo"
-              width={140}
-              height={56}
-              style={{ objectFit: 'contain', marginTop: '5px' }}
-            />
-          </Link>
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            whileHover={{ scale: 1.05 }}
+          >
+            <Link href="/dotcom" sx={{ textDecoration: 'none' }}>
+              <Image
+                src={getImagePath("/assets/img/logo.png")}
+                alt="Erik Stor Logo"
+                width={140}
+                height={56}
+                style={{ objectFit: 'contain', marginTop: '5px' }}
+              />
+            </Link>
+          </motion.div>
 
           {isMobile ? (
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              edge="start"
-              onClick={handleDrawerToggle}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              whileHover={{ scale: 1.1 }}
             >
-              <MenuIcon />
-            </IconButton>
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                edge="start"
+                onClick={handleDrawerToggle}
+              >
+                <MenuIcon />
+              </IconButton>
+            </motion.div>
           ) : (
-            <Tabs
-              value={activeTab}
-              onChange={onTabChange}
-              sx={{
-                '& .MuiTabs-indicator': {
-                  backgroundColor: '#875491',
-                  height: 3
-                },
-                '& .MuiTab-root': {
-                  color: 'white',
-                  fontWeight: 500,
-                  fontSize: '1rem',
-                  textTransform: 'none',
-                  minWidth: 100,
-                  '&.Mui-selected': {
-                    color: 'white',
-                    fontWeight: 600
-                  }
-                }
-              }}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
             >
-              {tabs.map((tab) => (
-                <Tab key={tab.value} label={tab.label} />
-              ))}
-            </Tabs>
+              <Tabs
+                value={activeTab}
+                onChange={onTabChange}
+                sx={{
+                  '& .MuiTabs-indicator': {
+                    backgroundColor: '#875491',
+                    height: 3
+                  },
+                  '& .MuiTab-root': {
+                    color: 'white',
+                    fontWeight: 500,
+                    fontSize: '1rem',
+                    textTransform: 'none',
+                    minWidth: 100,
+                    '&.Mui-selected': {
+                      color: 'white',
+                      fontWeight: 600
+                    }
+                  }
+                }}
+              >
+                {tabs.map((tab) => (
+                  <Tab key={tab.value} label={tab.label} />
+                ))}
+              </Tabs>
+            </motion.div>
           )}
         </Toolbar>
       </AppBar>

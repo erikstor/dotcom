@@ -10,11 +10,15 @@ import {
   Tab,
   Tabs,
   Typography,
-  useTheme
+  useTheme,
+  useMediaQuery
 } from '@mui/material';
 import Image from 'next/image';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import { getImagePath } from '../../utils/paths';
+import AnimatedCard from '../AnimatedCard';
+import AnimatedText from '../AnimatedText';
 
 const skillsByCategory = {
   lenguajes: [
@@ -274,24 +278,21 @@ function TabPanel({ children, value, index, ...other }) {
 function SkillsGrid({ skills }) {
   return (
     <Grid container spacing={3}>
-      {skills.map((skill) => (
+      {skills.map((skill, index) => (
         <Grid item xs={12} sm={6} md={4} key={skill.name}>
-          <Card
-            elevation={0}
-            sx={{
-              height: '100%',
-              border: '1px solid',
-              borderColor: 'divider',
-              borderRadius: 2,
-              transition: 'all 0.3s ease',
-              '&:hover': {
-                transform: 'scale(1.05) translate(0%, 0%)',
-                boxShadow: '0 8px 25px rgba(0,0,0,0.1)',
-                borderColor: skill.color
-              },
-            }}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1, duration: 0.6 }}
+            whileHover={{ y: -10, scale: 1.02 }}
           >
-            <CardContent sx={{ p: 3 }}>
+            <AnimatedCard
+              sx={{
+                height: '100%',
+                p: 3
+              }}
+            >
+            <Box sx={{ p: 3 }}>
               {/* Skill Image */}
               <Box
                 sx={{
@@ -387,17 +388,19 @@ function SkillsGrid({ skills }) {
                   }}
                 />
               </Box>
-            </CardContent>
-          </Card>
-        </Grid>
-      ))}
-    </Grid>
-  );
+            </Box>
+          </AnimatedCard>
+        </motion.div>
+      </Grid>
+    ))}
+  </Grid>
+);
 }
 
 export default function SkillsSection() {
   const theme = useTheme();
   const [activeTab, setActiveTab] = useState(0);
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   const handleTabChange = (event, newValue) => {
     setActiveTab(newValue);
@@ -422,17 +425,14 @@ export default function SkillsSection() {
       <Container maxWidth="lg">
         {/* Header */}
         <Box sx={{ textAlign: 'center', mb: 6 }}>
-          <Typography
+          <AnimatedText
             variant="h2"
-            gutterBottom
-            sx={{
-              fontWeight: 700,
-              color: 'text.primary',
-              mb: 2
-            }}
+            delay={0.2}
+            color="text.primary"
+            sx={{ mb: 2 }}
           >
-            <strong>Mis Habilidades</strong>
-          </Typography>
+            Mis Habilidades
+          </AnimatedText>
           <Typography
             variant="h6"
             color="text.secondary"
@@ -461,7 +461,6 @@ export default function SkillsSection() {
           </Box>
         </Box>
 
-
         {/* Tabs */}
         <Box sx={{ borderBottom: 1, borderColor: 'divider', mb: 4 }}>
           <Tabs
@@ -483,6 +482,19 @@ export default function SkillsSection() {
                 '&.Mui-selected': {
                   color: theme.palette.primary.main,
                   fontWeight: 600
+                }
+              },
+              // Mobile scroll indicator
+              '& .MuiTabs-scrollButtons': {
+                display: isMobile ? 'flex' : 'none',
+                backgroundColor: 'rgba(255,255,255,0.9)',
+                backdropFilter: 'blur(4px)',
+                borderRadius: '50%',
+                width: 32,
+                height: 32,
+                margin: '0 4px',
+                '&:hover': {
+                  backgroundColor: 'rgba(255,255,255,0.95)'
                 }
               }
             }}

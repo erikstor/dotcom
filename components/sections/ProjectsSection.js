@@ -4,12 +4,14 @@ import {
   Box,
   Container,
   Typography,
-  Paper,
   useTheme
 } from '@mui/material';
 import ConstructionIcon from '@mui/icons-material/Construction';
 import CodeIcon from '@mui/icons-material/Code';
 import UpdateIcon from '@mui/icons-material/Update';
+import { motion } from 'framer-motion';
+import AnimatedCard from '../AnimatedCard';
+import AnimatedIcon from '../AnimatedIcon';
 
 export default function ProjectsSection() {
   const theme = useTheme();
@@ -18,7 +20,7 @@ export default function ProjectsSection() {
     <Box
       sx={{
         py: 8,
-        backgroundColor: 'background.default',
+        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
         minHeight: 'calc(100vh - 200px)',
         display: 'flex',
         alignItems: 'center'
@@ -27,210 +29,203 @@ export default function ProjectsSection() {
       <Container maxWidth="lg">
         <Box sx={{ textAlign: 'center' }}>
           {/* Icono de construcción */}
-          <Box
-            sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              mb: 4
-            }}
-          >
-            <Paper
-              elevation={0}
-              sx={{
-                p: 4,
-                borderRadius: '50%',
-                backgroundColor: theme.palette.primary.light,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                width: 120,
-                height: 120
-              }}
-            >
-              <ConstructionIcon
-                sx={{
-                  fontSize: 60,
-                  color: 'white'
-                }}
-              />
-            </Paper>
-          </Box>
-
-          {/* Título principal */}
-          <Typography
-            variant="h2"
-            gutterBottom
-            sx={{
-              fontWeight: 700,
-              color: 'text.primary',
-              mb: 3
-            }}
-          >
-            Sección en Construcción
-          </Typography>
-
-          {/* Descripción */}
-          <Typography
-            variant="h5"
-            color="text.secondary"
-            sx={{
-              maxWidth: 600,
-              mx: 'auto',
-              lineHeight: 1.6,
-              mb: 4
-            }}
-          >
-            Estamos actualizando nuestro portafolio de proyectos con trabajos más recientes y relevantes.
-          </Typography>
-
-          {/* Información adicional */}
-          <Paper
-            elevation={0}
-            sx={{
-              p: 4,
-              maxWidth: 800,
-              mx: 'auto',
-              backgroundColor: 'background.paper',
-              border: '1px solid',
-              borderColor: 'divider',
-              borderRadius: 3
-            }}
+          <motion.div
+            initial={{ opacity: 0, scale: 0, rotate: -180 }}
+            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            whileHover={{ scale: 1.1, rotate: 360 }}
           >
             <Box
               sx={{
-                display: 'grid',
-                gridTemplateColumns: { xs: '1fr', md: 'repeat(3, 1fr)' },
-                gap: 3,
+                display: 'flex',
+                justifyContent: 'center',
                 mb: 4
               }}
             >
-              {/* Proyectos recientes */}
-              <Box sx={{ textAlign: 'center' }}>
-                <CodeIcon
-                  sx={{
-                    fontSize: 40,
-                    color: theme.palette.primary.main,
-                    mb: 2
-                  }}
-                />
-                <Typography
-                  variant="h6"
-                  sx={{
-                    fontWeight: 600,
-                    color: 'text.primary',
-                    mb: 1
-                  }}
-                >
-                  Proyectos Recientes
-                </Typography>
-                <Typography
-                  variant="body2"
-                  color="text.secondary"
-                >
-                  Aplicaciones web modernas desarrolladas con tecnologías actuales
-                </Typography>
-              </Box>
-
-              {/* Experiencia profesional */}
-              <Box sx={{ textAlign: 'center' }}>
-                <UpdateIcon
-                  sx={{
-                    fontSize: 40,
-                    color: theme.palette.secondary.main,
-                    mb: 2
-                  }}
-                />
-                <Typography
-                  variant="h6"
-                  sx={{
-                    fontWeight: 600,
-                    color: 'text.primary',
-                    mb: 1
-                  }}
-                >
-                  Experiencia Profesional
-                </Typography>
-                <Typography
-                  variant="body2"
-                  color="text.secondary"
-                >
-                  Proyectos empresariales y colaboraciones con clientes internacionales
-                </Typography>
-              </Box>
-
-              {/* Tecnologías modernas */}
-              <Box sx={{ textAlign: 'center' }}>
+              <AnimatedCard
+                sx={{
+                  p: 4,
+                  borderRadius: '50%',
+                  backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                  backdropFilter: 'blur(10px)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: 120,
+                  height: 120
+                }}
+              >
                 <ConstructionIcon
                   sx={{
-                    fontSize: 40,
-                    color: theme.palette.primary.main,
-                    mb: 2
+                    fontSize: 60,
+                    color: 'white'
                   }}
                 />
-                <Typography
-                  variant="h6"
-                  sx={{
-                    fontWeight: 600,
-                    color: 'text.primary',
-                    mb: 1
-                  }}
-                >
-                  Tecnologías Modernas
-                </Typography>
-                <Typography
-                  variant="body2"
-                  color="text.secondary"
-                >
-                  Next.js, React, Node.js, TypeScript y más tecnologías actuales
-                </Typography>
-              </Box>
+              </AnimatedCard>
             </Box>
+          </motion.div>
 
-            {/* Mensaje de contacto */}
-            <Box
-              sx={{
-                p: 3,
-                backgroundColor: theme.palette.primary.light,
-                borderRadius: 2,
-                textAlign: 'center'
-              }}
-            >
-              <Typography
-                variant="body1"
-                sx={{
-                  color: 'white',
-                  fontWeight: 500,
-                  mb: 1
-                }}
-              >
-                ¿Interesado en ver mi trabajo más reciente?
-              </Typography>
-              <Typography
-                variant="body2"
-                sx={{
-                  color: 'rgba(255,255,255,0.9)'
-                }}
-              >
-                Puedes contactarme directamente para conocer más sobre mis proyectos actuales
-              </Typography>
-            </Box>
-          </Paper>
-
-          {/* Información de contacto */}
-          <Box sx={{ mt: 4 }}>
+          {/* Título principal */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+          >
             <Typography
-              variant="body2"
-              color="text.secondary"
+              variant="h2"
+              gutterBottom
               sx={{
-                maxWidth: 500,
-                mx: 'auto',
-                lineHeight: 1.6
+                fontWeight: 700,
+                color: 'white',
+                mb: 3,
+                textShadow: '2px 2px 4px rgba(0,0,0,0.3)'
               }}
             >
-              Mientras tanto, puedes explorar mis habilidades técnicas en la sección anterior 
-              o contactarme directamente para discutir oportunidades de colaboración.
+              Sección en Construcción
             </Typography>
-          </Box>
+          </motion.div>
+
+          {/* Descripción */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
+          >
+            <Typography
+              variant="h5"
+              color="white"
+              sx={{
+                maxWidth: 600,
+                mx: 'auto',
+                lineHeight: 1.6,
+                mb: 4,
+                textShadow: '1px 1px 2px rgba(0,0,0,0.3)'
+              }}
+            >
+              Estamos actualizando nuestro portafolio de proyectos con trabajos más recientes y relevantes.
+            </Typography>
+          </motion.div>
+
+          {/* Información adicional */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7, duration: 0.6 }}
+          >
+            <AnimatedCard
+              sx={{
+                p: 4,
+                maxWidth: 800,
+                mx: 'auto'
+              }}
+            >
+              <Box
+                sx={{
+                  display: 'grid',
+                  gridTemplateColumns: { xs: '1fr', md: 'repeat(3, 1fr)' },
+                  gap: 3,
+                  mb: 4
+                }}
+              >
+                {/* Proyectos recientes */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.9, duration: 0.6 }}
+                  whileHover={{ y: -5 }}
+                >
+                  <Box sx={{ textAlign: 'center' }}>
+                    <AnimatedIcon size={40} color="white" delay={0.1}>
+                      <CodeIcon />
+                    </AnimatedIcon>
+                    <Typography
+                      variant="h6"
+                      sx={{
+                        fontWeight: 600,
+                        color: 'white',
+                        mb: 1,
+                        textShadow: '1px 1px 2px rgba(0,0,0,0.3)'
+                      }}
+                    >
+                      Proyectos Recientes
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      color="white"
+                      sx={{ textShadow: '1px 1px 2px rgba(0,0,0,0.3)' }}
+                    >
+                      Aplicaciones web modernas desarrolladas con tecnologías actuales
+                    </Typography>
+                  </Box>
+                </motion.div>
+
+                {/* Experiencia profesional */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.1, duration: 0.6 }}
+                  whileHover={{ y: -5 }}
+                >
+                  <Box sx={{ textAlign: 'center' }}>
+                    <AnimatedIcon size={40} color="white" delay={0.2}>
+                      <UpdateIcon />
+                    </AnimatedIcon>
+                    <Typography
+                      variant="h6"
+                      sx={{
+                        fontWeight: 600,
+                        color: 'white',
+                        mb: 1,
+                        textShadow: '1px 1px 2px rgba(0,0,0,0.3)'
+                      }}
+                    >
+                      Experiencia Profesional
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      color="white"
+                      sx={{ textShadow: '1px 1px 2px rgba(0,0,0,0.3)' }}
+                    >
+                      Proyectos empresariales y colaboraciones con clientes internacionales
+                    </Typography>
+                  </Box>
+                </motion.div>
+
+                {/* Tecnologías modernas */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.3, duration: 0.6 }}
+                  whileHover={{ y: -5 }}
+                >
+                  <Box sx={{ textAlign: 'center' }}>
+                    <AnimatedIcon size={40} color="white" delay={0.3}>
+                      <ConstructionIcon />
+                    </AnimatedIcon>
+                    <Typography
+                      variant="h6"
+                      sx={{
+                        fontWeight: 600,
+                        color: 'white',
+                        mb: 1,
+                        textShadow: '1px 1px 2px rgba(0,0,0,0.3)'
+                      }}
+                    >
+                      Tecnologías Modernas
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      color="white"
+                      sx={{ textShadow: '1px 1px 2px rgba(0,0,0,0.3)' }}
+                    >
+                      Next.js, React, Node.js, TypeScript y más tecnologías actuales
+                    </Typography>
+                  </Box>
+                </motion.div>
+              </Box>
+
+            </AnimatedCard>
+          </motion.div>
         </Box>
       </Container>
     </Box>

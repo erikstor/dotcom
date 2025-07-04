@@ -1,8 +1,10 @@
 'use client';
 
 import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import SmoothScroll from '../components/SmoothScroll';
 import HomeSection from '../components/sections/HomeSection';
 import HistorySection from '../components/sections/HistorySection';
 import SkillsSection from '../components/sections/SkillsSection';
@@ -35,10 +37,25 @@ export default function Home() {
   };
 
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', position: 'relative' }}>
+      {/* Barra de progreso de scroll */}
+      <SmoothScroll />
+      
+
+      
       <Header activeTab={activeTab} onTabChange={handleTabChange} />
-      <main style={{ flex: 1 }}>
-        {renderContent()}
+      <main style={{ flex: 1, position: 'relative', zIndex: 1 }}>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeTab}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -20 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+          >
+            {renderContent()}
+          </motion.div>
+        </AnimatePresence>
       </main>
       <Footer />
     </div>
