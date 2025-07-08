@@ -1,0 +1,79 @@
+// Variables base
+$primary: #875491;
+$secondary: #667eea;
+$background: #f7f7fa;
+$text: #222;
+$radius: 12px;
+$transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+// Reset y mejoras de UX
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html, body {
+  background: $background;
+  color: $text;
+  font-family: 'Inter', Arial, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background: #eee;
+}
+::-webkit-scrollbar-thumb {
+  background: $primary;
+  border-radius: 8px;
+}
+
+// Botones
+button, .MuiButton-root {
+  border-radius: $radius;
+  transition: background $transition, color $transition, box-shadow $transition;
+  font-weight: 600;
+}
+button:focus, .MuiButton-root:focus {
+  outline: 2px solid $primary;
+  outline-offset: 2px;
+}
+
+// Tarjetas
+.card, .MuiCard-root {
+  border-radius: $radius;
+  box-shadow: 0 2px 12px rgba(135, 84, 145, 0.08);
+  transition: box-shadow $transition, transform $transition;
+}
+.card:hover, .MuiCard-root:hover {
+  box-shadow: 0 8px 32px rgba(135, 84, 145, 0.18);
+  transform: translateY(-2px) scale(1.01);
+}
+
+// Animaciones de entrada
+.fade-in {
+  animation: fadeIn 0.7s ease-in;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: none; }
+}
+
+// Mejoras de accesibilidad
+:focus-visible {
+  outline: 2px solid $primary;
+  outline-offset: 2px;
+}
+
+// Links
+a {
+  color: $primary;
+  text-decoration: none;
+  transition: color $transition;
+}
+a:hover {
+  color: $secondary;
+  text-decoration: underline;
+} 

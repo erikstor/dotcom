@@ -1,9 +1,6 @@
 'use client';
 
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import { Inter } from 'next/font/google';
-
-const inter = Inter({ subsets: ['latin'] });
 
 // Tema sobrio para entornos profesionales
 const theme = createTheme({
@@ -29,7 +26,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: inter.style.fontFamily,
+    fontFamily: 'Inter, Arial, sans-serif',
     h1: {
       fontWeight: 600,
       fontSize: '2.5rem',

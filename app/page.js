@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import SmoothScroll from '../components/SmoothScroll';
@@ -45,17 +45,15 @@ export default function Home() {
       
       <Header activeTab={activeTab} onTabChange={handleTabChange} />
       <main style={{ flex: 1, position: 'relative', zIndex: 1 }}>
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeTab}
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-          >
-            {renderContent()}
-          </motion.div>
-        </AnimatePresence>
+        <motion.div
+          key={activeTab}
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -20 }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+        >
+          {renderContent()}
+        </motion.div>
       </main>
       <Footer />
     </div>

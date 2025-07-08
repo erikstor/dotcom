@@ -1,6 +1,5 @@
 'use client';
 
-import EmailIcon from '@mui/icons-material/Email';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import {
@@ -10,9 +9,10 @@ import {
   Stack,
   Typography
 } from '@mui/material';
+import { useI18n } from '../contexts/I18nContext';
 
 export default function Footer() {
-
+  const { t } = useI18n();
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
@@ -58,7 +58,7 @@ export default function Footer() {
             align="center"
             sx={{ order: { xs: 2, md: 1 } }}
           >
-            © {currentYear} Erik Stor. Todos los derechos reservados.
+            {t('footer.copyright').replace('2024', currentYear)}
           </Typography>
 
           {/* Social Links */}

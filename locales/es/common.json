@@ -1,0 +1,69 @@
+{
+  "navigation": {
+    "home": "Inicio",
+    "history": "Historia",
+    "skills": "Habilidades",
+    "projects": "Proyectos"
+  },
+  "home": {
+    "title": "¡Hola!",
+    "subtitle": "Mi nombre es Erik Stor, bienvenido a mi espacio profesional en la web.",
+    "description": "Soy desarrollador web backend con experiencia en tecnologías modernas. Me apasiona crear soluciones digitales innovadoras y eficientes.",
+    "cta": "Conóceme un poco",
+    "technologiesTitle": "Tecnologías que he utilizado"
+  },
+  "skills": {
+    "title": "Mis Habilidades",
+    "subtitle": "Tecnologías y herramientas organizadas por categorías",
+    "description": "Constantemente estoy aprendiendo nuevas tecnologías y mejorando mis habilidades existentes. Me mantengo actualizado con las últimas tendencias en desarrollo web para ofrecer las mejores soluciones.",
+    "categories": {
+      "languages": "Lenguajes",
+      "technologies": "Tecnologías",
+      "frameworks": "Frameworks",
+      "databases": "Bases de Datos",
+      "cloud": "Nubes"
+    },
+    "levels": {
+      "advanced": "Avanzado",
+      "intermediate": "Intermedio",
+      "basic": "Básico"
+    }
+  },
+  "projects": {
+    "title": "Mis Proyectos",
+    "subtitle": "Algunos de los proyectos en los que he trabajado",
+    "viewProject": "Ver Proyecto",
+    "viewCode": "Ver Código",
+    "constructionTitle": "Sección en Construcción",
+    "constructionDescription": "Estamos actualizando nuestro portafolio de proyectos con trabajos más recientes y relevantes.",
+    "recentProjects": "Proyectos Recientes",
+    "recentProjectsDesc": "Aplicaciones web modernas desarrolladas con tecnologías actuales",
+    "professionalExperience": "Experiencia Profesional",
+    "professionalExperienceDesc": "Proyectos empresariales y colaboraciones con clientes internacionales",
+    "modernTechnologies": "Tecnologías Modernas",
+    "modernTechnologiesDesc": "Stack tecnológico actualizado y mejores prácticas de desarrollo"
+  },
+  "history": {
+    "title": "Mi Historia",
+    "subtitle": "Mi trayectoria profesional y experiencia",
+    "mainTitle": "Mi Historia",
+    "sectionTitle": "Algo de mi historia...",
+    "paragraph1": "Nací en Dosquebradas, un pequeño municipio de Colombia, país donde actualmente habito. Es curioso, ya que nunca viví allá, solamente nací, y antes de tener conciencia me mudé a Cali.",
+    "paragraph2": "Soy desarrollador web backend y empecé en todo el mundo de la programación casi porque la vida me obligó, así como en la película de Avatar donde no eliges montura, la montura te elige a ti.",
+    "paragraph3": "Mi viaje en el desarrollo web comenzó como una necesidad, pero rápidamente se convirtió en una pasión. Cada proyecto es una oportunidad para aprender algo nuevo y mejorar mis habilidades. Como este que fue desarrollado casi todo utilizando técnicas de Prompt Engineer.",
+    "experience": "Experiencia",
+    "experienceDesc": "Más de 5 años desarrollando aplicaciones web modernas y escalables.",
+    "focus": "Enfoque",
+    "focusDesc": "Desarrollo de soluciones complejas enfocadas en la lógica de negocio (backend).",
+    "location": "Ubicación",
+    "locationDesc": "Cali, Colombia - Trabajando de forma remota para clientes internacionales."
+  },
+  "footer": {
+    "copyright": "© 2024 Erik Stor. Todos los derechos reservados.",
+    "madeWith": "Hecho con ❤️ y Next.js"
+  },
+  "language": {
+    "es": "Español",
+    "en": "English"
+  }
+} 

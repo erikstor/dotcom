@@ -2,11 +2,8 @@
 
 import {
   Box,
-  Card,
-  CardContent,
   Container,
   Grid,
-  LinearProgress,
   Tab,
   Tabs,
   Typography,
@@ -19,6 +16,52 @@ import { motion } from 'framer-motion';
 import { getImagePath } from '../../utils/paths';
 import AnimatedCard from '../AnimatedCard';
 import AnimatedText from '../AnimatedText';
+import { useI18n } from '../../contexts/I18nContext';
+
+// Mapeo de URLs para cada habilidad
+const skillUrls = {
+  // Lenguajes
+  "JavaScript": "https://github.com/erikstor/examples-api-backend/tree/master/nodejs",
+  "TypeScript": "https://github.com/erikstor/examples-api-backend/tree/master/typescript",
+  "GoLang": "https://github.com/erikstor/examples-api-backend/tree/master/golang",
+  "Python": "https://github.com/erikstor/examples-api-backend/tree/master/python",
+  "Java": null, // No hay carpeta específica para Java
+  "PHP": null, // No hay carpeta específica para PHP
+  "HTML 5": null, // No hay carpeta específica para HTML
+  "CSS 3": null, // No hay carpeta específica para CSS
+  
+  // Tecnologías
+  "Node.js": "https://github.com/erikstor/examples-api-backend/tree/master/nodejs",
+  "CDK": "https://github.com/erikstor/examples-api-backend/tree/master/devops",
+  "CloudFormation": "https://github.com/erikstor/examples-api-backend/tree/master/devops",
+  "Docker": "https://github.com/erikstor/examples-api-backend/tree/master/devops",
+  "Kubernetes": "https://github.com/erikstor/examples-api-backend/tree/master/devops",
+  
+  // Frameworks
+  "Serverless": "https://github.com/erikstor/examples-api-backend/tree/master/nodejs",
+  "NestJS": "https://github.com/erikstor/examples-api-backend/tree/master/nodejs",
+  "Fiber": "https://github.com/erikstor/examples-api-backend/tree/master/golang",
+  "Spring Boot": null, // No hay carpeta específica para Spring Boot
+  "FastApi": "https://github.com/erikstor/examples-api-backend/tree/master/python",
+  "Django": "https://github.com/erikstor/examples-api-backend/tree/master/python",
+  "Laravel": null, // No hay carpeta específica para Laravel
+  "React": null, // No hay carpeta específica para React
+  "Next.js": null, // No hay carpeta específica para Next.js
+  "Angular": null, // No hay carpeta específica para Angular
+  
+  // Bases de Datos
+  "MySQL": "https://github.com/erikstor/examples-api-backend/tree/master/sql",
+  "PostgreSQL": "https://github.com/erikstor/examples-api-backend/tree/master/sql",
+  "LiquidBase": "https://github.com/erikstor/examples-api-backend/tree/master/sql",
+  "DynamoDB": "https://github.com/erikstor/examples-api-backend/tree/master/nosql",
+  "Redis": "https://github.com/erikstor/examples-api-backend/tree/master/nosql",
+  "MongoDB": "https://github.com/erikstor/examples-api-backend/tree/master/nosql",
+  "Sql Lite": "https://github.com/erikstor/examples-api-backend/tree/master/sql",
+  
+  // Nubes
+  "AWS": "https://github.com/erikstor/examples-api-backend/tree/master/devops",
+  "Google Cloud": "https://github.com/erikstor/examples-api-backend/tree/master/devops",
+};
 
 const skillsByCategory = {
   lenguajes: [
@@ -278,140 +321,119 @@ function TabPanel({ children, value, index, ...other }) {
 function SkillsGrid({ skills }) {
   return (
     <Grid container spacing={3}>
-      {skills.map((skill, index) => (
-        <Grid item xs={12} sm={6} md={4} key={skill.name}>
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1, duration: 0.6 }}
-            whileHover={{ y: -10, scale: 1.02 }}
-          >
-            <AnimatedCard
-              sx={{
-                height: '100%',
-                p: 3
-              }}
+      {skills.map((skill, index) => {
+        const skillUrl = skillUrls[skill.name];
+        const isClickable = skillUrl !== null;
+        
+        return (
+          <Grid item xs={12} sm={6} md={4} key={skill.name}>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1, duration: 0.6 }}
+              whileHover={{ y: -10, scale: 1.02 }}
             >
-            <Box sx={{ p: 3 }}>
-              {/* Skill Image */}
-              <Box
+              <AnimatedCard
                 sx={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  mb: 2
+                  height: '100%',
+                  p: 3,
+                  cursor: isClickable ? 'pointer' : 'default',
+                  '&:hover': isClickable ? {
+                    boxShadow: 6,
+                    transform: 'translateY(-4px)',
+                    transition: 'all 0.3s ease-in-out'
+                  } : {}
                 }}
+                onClick={isClickable ? () => window.open(skillUrl, '_blank') : undefined}
               >
-                <Box
-                  sx={{
-                    width: '70%',
-                    height: '70%',
-                    position: 'relative',
-                    borderRadius: 1,
-                    overflow: 'hidden',
-                    backgroundColor: 'background.paper',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center'
-                  }}
-                >
-                  <Image
-                    src={skill.image}
-                    alt={skill.name}
-                    width={150}
-                    height={100}
-                    style={{ objectFit: 'contain' }}
-                  />
-                </Box>
-              </Box>
-
-              {/* Skill Name */}
-              <Typography
-                variant="h6"
-                align="center"
-                gutterBottom
-                sx={{
-                  fontWeight: 600,
-                  color: 'text.primary',
-                  mb: 1
-                }}
-              >
-                {skill.name}
-              </Typography>
-
-              {/* Skill Level */}
-              <Typography
-                variant="body2"
-                align="center"
-                color="text.secondary"
-                sx={{ mb: 2 }}
-              >
-                {skill.level}
-              </Typography>
-
-              {/* Progress Bar */}
-              <Box sx={{ width: '100%' }}>
-                <Box
-                  sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    mb: 1
-                  }}
-                >
-                  <Typography
-                    variant="caption"
-                    color="text.secondary"
-                  >
-                    <strong>Progreso</strong>
-                  </Typography>
-                  <Typography
-                    variant="caption"
+                <Box sx={{ p: 3 }}>
+                  {/* Skill Image */}
+                  <Box
                     sx={{
-                      fontWeight: 600,
-                      color: skill.color
+                      display: 'flex',
+                      justifyContent: 'center',
+                      mb: 2
                     }}
                   >
-                    {skill.progress}%
+                    <Box
+                      sx={{
+                        width: '70%',
+                        height: '70%',
+                        position: 'relative',
+                        borderRadius: 1,
+                        overflow: 'hidden',
+                        backgroundColor: 'background.paper',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                      }}
+                    >
+                      <Image
+                        src={skill.image}
+                        alt={skill.name}
+                        width={150}
+                        height={100}
+                        style={{ objectFit: 'contain' }}
+                      />
+                    </Box>
+                  </Box>
+
+                  {/* Skill Name */}
+                  <Typography
+                    variant="h6"
+                    align="center"
+                    gutterBottom
+                    sx={{
+                      fontWeight: 600,
+                      color: 'text.primary',
+                      mb: 1
+                    }}
+                  >
+                    {skill.name}
                   </Typography>
+
+                  {/* Link indicator */}
+                  {isClickable && (
+                    <Typography
+                      variant="caption"
+                      align="center"
+                      sx={{
+                        color: 'primary.main',
+                        fontWeight: 500,
+                        display: 'block',
+                        mt: 1
+                      }}
+                    >
+                      Ver ejemplos →
+                    </Typography>
+                  )}
+
                 </Box>
-                <LinearProgress
-                  variant="determinate"
-                  value={skill.progress}
-                  sx={{
-                    height: 8,
-                    borderRadius: 4,
-                    backgroundColor: 'rgba(0,0,0,0.1)',
-                    '& .MuiLinearProgress-bar': {
-                      backgroundColor: skill.color,
-                      borderRadius: 4
-                    }
-                  }}
-                />
-              </Box>
-            </Box>
-          </AnimatedCard>
-        </motion.div>
-      </Grid>
-    ))}
-  </Grid>
-);
+              </AnimatedCard>
+            </motion.div>
+          </Grid>
+        );
+      })}
+    </Grid>
+  );
 }
 
 export default function SkillsSection() {
   const theme = useTheme();
   const [activeTab, setActiveTab] = useState(0);
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const { t } = useI18n();
 
   const handleTabChange = (event, newValue) => {
     setActiveTab(newValue);
   };
 
   const categories = [
-    { label: 'Lenguajes', key: 'lenguajes' },
-    { label: 'Técnologias', key: 'tecnologias' },
-    { label: 'Frameworks', key: 'frameworks' },
-    { label: 'Bases de Datos', key: 'basesDeDatos' },
-    { label: 'Nubes', key: 'nubes' }
+    { label: t('skills.categories.languages'), key: 'lenguajes' },
+    { label: t('skills.categories.technologies'), key: 'tecnologias' },
+    { label: t('skills.categories.frameworks'), key: 'frameworks' },
+    { label: t('skills.categories.databases'), key: 'basesDeDatos' },
+    { label: t('skills.categories.cloud'), key: 'nubes' }
   ];
 
   return (
@@ -431,7 +453,7 @@ export default function SkillsSection() {
             color="text.primary"
             sx={{ mb: 2 }}
           >
-            Mis Habilidades
+            {t('skills.title')}
           </AnimatedText>
           <Typography
             variant="h6"
@@ -442,7 +464,7 @@ export default function SkillsSection() {
               lineHeight: 1.6
             }}
           >
-            Tecnologías y herramientas organizadas por categorías
+            {t('skills.subtitle')}
           </Typography>
           {/* Additional Info */}
           <Box sx={{ mt: 1, textAlign: 'center' }}>
@@ -455,8 +477,7 @@ export default function SkillsSection() {
                 lineHeight: 1.7
               }}
             >
-              Constantemente estoy aprendiendo nuevas tecnologías y mejorando mis habilidades existentes.
-              Me mantengo actualizado con las últimas tendencias en desarrollo web para ofrecer las mejores soluciones.
+              {t('skills.description')}
             </Typography>
           </Box>
         </Box>

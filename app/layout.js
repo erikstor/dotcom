@@ -2,7 +2,9 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import { Inter } from 'next/font/google';
 import ClientThemeProvider from '../components/ClientThemeProvider';
+import { I18nProvider } from '../contexts/I18nContext';
 import { getAssetPath } from '../utils/paths';
+import '../styles/global.scss';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -36,10 +38,12 @@ export default function RootLayout({ children }) {
       </head>
       <body className={inter.className}>
         <AppRouterCacheProvider>
-          <ClientThemeProvider>
-            <CssBaseline />
-            {children}
-          </ClientThemeProvider>
+          <I18nProvider>
+            <ClientThemeProvider>
+              <CssBaseline />
+              {children}
+            </ClientThemeProvider>
+          </I18nProvider>
         </AppRouterCacheProvider>
       </body>
     </html>

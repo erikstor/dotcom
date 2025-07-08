@@ -12,9 +12,11 @@ import UpdateIcon from '@mui/icons-material/Update';
 import { motion } from 'framer-motion';
 import AnimatedCard from '../AnimatedCard';
 import AnimatedIcon from '../AnimatedIcon';
+import { useI18n } from '../../contexts/I18nContext';
 
 export default function ProjectsSection() {
   const theme = useTheme();
+  const { t } = useI18n();
 
   return (
     <Box
@@ -81,7 +83,7 @@ export default function ProjectsSection() {
                 textShadow: '2px 2px 4px rgba(0,0,0,0.3)'
               }}
             >
-              Sección en Construcción
+              {t('projects.constructionTitle')}
             </Typography>
           </motion.div>
 
@@ -102,7 +104,7 @@ export default function ProjectsSection() {
                 textShadow: '1px 1px 2px rgba(0,0,0,0.3)'
               }}
             >
-              Estamos actualizando nuestro portafolio de proyectos con trabajos más recientes y relevantes.
+              {t('projects.constructionDescription')}
             </Typography>
           </motion.div>
 
@@ -134,10 +136,18 @@ export default function ProjectsSection() {
                   transition={{ delay: 0.9, duration: 0.6 }}
                   whileHover={{ y: -5 }}
                 >
-                  <Box sx={{ textAlign: 'center' }}>
-                    <AnimatedIcon size={40} color="white" delay={0.1}>
-                      <CodeIcon />
-                    </AnimatedIcon>
+                  <Box sx={{ 
+                    textAlign: 'center',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}>
+                    <Box sx={{ display: 'flex', justifyContent: 'center', mb: 2 }}>
+                      <AnimatedIcon size={40} color="white" delay={0.1}>
+                        <CodeIcon />
+                      </AnimatedIcon>
+                    </Box>
                     <Typography
                       variant="h6"
                       sx={{
@@ -147,14 +157,14 @@ export default function ProjectsSection() {
                         textShadow: '1px 1px 2px rgba(0,0,0,0.3)'
                       }}
                     >
-                      Proyectos Recientes
+                      {t('projects.recentProjects')}
                     </Typography>
                     <Typography
                       variant="body2"
                       color="white"
                       sx={{ textShadow: '1px 1px 2px rgba(0,0,0,0.3)' }}
                     >
-                      Aplicaciones web modernas desarrolladas con tecnologías actuales
+                      {t('projects.recentProjectsDesc')}
                     </Typography>
                   </Box>
                 </motion.div>
@@ -166,10 +176,18 @@ export default function ProjectsSection() {
                   transition={{ delay: 1.1, duration: 0.6 }}
                   whileHover={{ y: -5 }}
                 >
-                  <Box sx={{ textAlign: 'center' }}>
-                    <AnimatedIcon size={40} color="white" delay={0.2}>
-                      <UpdateIcon />
-                    </AnimatedIcon>
+                  <Box sx={{ 
+                    textAlign: 'center',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}>
+                    <Box sx={{ display: 'flex', justifyContent: 'center', mb: 2 }}>
+                      <AnimatedIcon size={40} color="white" delay={0.2}>
+                        <UpdateIcon />
+                      </AnimatedIcon>
+                    </Box>
                     <Typography
                       variant="h6"
                       sx={{
@@ -179,14 +197,14 @@ export default function ProjectsSection() {
                         textShadow: '1px 1px 2px rgba(0,0,0,0.3)'
                       }}
                     >
-                      Experiencia Profesional
+                      {t('projects.professionalExperience')}
                     </Typography>
                     <Typography
                       variant="body2"
                       color="white"
                       sx={{ textShadow: '1px 1px 2px rgba(0,0,0,0.3)' }}
                     >
-                      Proyectos empresariales y colaboraciones con clientes internacionales
+                      {t('projects.professionalExperienceDesc')}
                     </Typography>
                   </Box>
                 </motion.div>
@@ -198,10 +216,18 @@ export default function ProjectsSection() {
                   transition={{ delay: 1.3, duration: 0.6 }}
                   whileHover={{ y: -5 }}
                 >
-                  <Box sx={{ textAlign: 'center' }}>
-                    <AnimatedIcon size={40} color="white" delay={0.3}>
-                      <ConstructionIcon />
-                    </AnimatedIcon>
+                  <Box sx={{ 
+                    textAlign: 'center',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}>
+                    <Box sx={{ display: 'flex', justifyContent: 'center', mb: 2 }}>
+                      <AnimatedIcon size={40} color="white" delay={0.3}>
+                        <ConstructionIcon />
+                      </AnimatedIcon>
+                    </Box>
                     <Typography
                       variant="h6"
                       sx={{
@@ -211,14 +237,14 @@ export default function ProjectsSection() {
                         textShadow: '1px 1px 2px rgba(0,0,0,0.3)'
                       }}
                     >
-                      Tecnologías Modernas
+                      {t('projects.modernTechnologies')}
                     </Typography>
                     <Typography
                       variant="body2"
                       color="white"
                       sx={{ textShadow: '1px 1px 2px rgba(0,0,0,0.3)' }}
                     >
-                      Next.js, React, Node.js, TypeScript y más tecnologías actuales
+                      {t('projects.modernTechnologiesDesc')}
                     </Typography>
                   </Box>
                 </motion.div>

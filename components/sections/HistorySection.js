@@ -6,15 +6,16 @@ import {
   CardContent,
   Container,
   Grid,
-  Paper,
   Stack,
   Typography,
   useTheme
 } from '@mui/material';
 import { getImagePath } from '../../utils/paths';
+import { useI18n } from '../../contexts/I18nContext';
 
 export default function HistorySection() {
   const theme = useTheme();
+  const { t } = useI18n();
 
   return (
     <Box
@@ -70,15 +71,14 @@ export default function HistorySection() {
               textShadow: '2px 2px 4px rgba(0,0,0,0.5)'
             }}
           >
-            <strong>Mi Historia</strong>
+            <strong>{t('history.mainTitle')}</strong>
           </Typography>
         </Box>
 
         {/* Main Content */}
         <Grid container spacing={4}>
           <Grid item xs={12} md={8}>
-            <Paper
-              elevation={0}
+            <Box
               sx={{
                 p: 4,
                 backgroundColor: 'background.paper',
@@ -101,7 +101,7 @@ export default function HistorySection() {
                   mb: 3
                 }}
               >
-                Algo de mi historia...
+                {t('history.sectionTitle')}
               </Typography>
 
               <Typography
@@ -114,8 +114,7 @@ export default function HistorySection() {
                   fontSize: '1.1rem'
                 }}
               >
-                Nací en Dosquebradas, un pequeño municipio de Colombia, país donde actualmente habito.
-                Es curioso, ya que nunca viví allá, solamente nací, y antes de tener conciencia me mudé a Cali.
+                {t('history.paragraph1')}
               </Typography>
 
               <Typography
@@ -128,25 +127,7 @@ export default function HistorySection() {
                   fontSize: '1.1rem'
                 }}
               >
-                Soy desarrollador web backend y empecé en todo el mundo de la programación casi porque
-                la vida me obligó, así como en la película de{' '}
-                <Typography
-                  component="a"
-                  href="https://www.google.com/search?q=avatar"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  sx={{
-                    color: theme.palette.primary.main,
-                    textDecoration: 'none',
-                    fontWeight: 500,
-                    '&:hover': {
-                      textDecoration: 'underline'
-                    }
-                  }}
-                >
-                  Avatar
-                </Typography>
-                {' '}donde no eliges montura, la montura te elige a ti.
+                {t('history.paragraph2')}
               </Typography>
 
               <Typography
@@ -158,11 +139,9 @@ export default function HistorySection() {
                   fontSize: '1.1rem'
                 }}
               >
-                Mi viaje en el desarrollo web comenzó como una necesidad, pero rápidamente se convirtió
-                en una pasión. Cada proyecto es una oportunidad para aprender algo nuevo y mejorar mis habilidades.
-                Como este que fue desarrollado casi todo utilizando técnicas de <strong>Prompt Engineer</strong>.
+                {t('history.paragraph3')}
               </Typography>
-            </Paper>
+            </Box>
           </Grid>
 
           <Grid item xs={12} md={4}>
@@ -187,14 +166,14 @@ export default function HistorySection() {
                     gutterBottom
                     sx={{ fontWeight: 600, color: 'text.primary' }}
                   >
-                    Experiencia
+                    {t('history.experience')}
                   </Typography>
                   <Typography
                     variant="body2"
                     color="text.secondary"
                     sx={{ lineHeight: 1.6 }}
                   >
-                    Más de 5 años desarrollando aplicaciones web modernas y escalables.
+                    {t('history.experienceDesc')}
                   </Typography>
                 </CardContent>
               </Card>
@@ -218,14 +197,14 @@ export default function HistorySection() {
                     gutterBottom
                     sx={{ fontWeight: 600, color: 'text.primary' }}
                   >
-                    Enfoque
+                    {t('history.focus')}
                   </Typography>
                   <Typography
                     variant="body2"
                     color="text.secondary"
                     sx={{ lineHeight: 1.6 }}
                   >
-                    Desarrollo de soluciones complejas enfocadas en la lógica de negocio (backend).
+                    {t('history.focusDesc')}
                   </Typography>
                 </CardContent>
               </Card>
@@ -249,14 +228,14 @@ export default function HistorySection() {
                     gutterBottom
                     sx={{ fontWeight: 600, color: 'text.primary' }}
                   >
-                    Ubicación
+                    {t('history.location')}
                   </Typography>
                   <Typography
                     variant="body2"
                     color="text.secondary"
                     sx={{ lineHeight: 1.6 }}
                   >
-                    Cali, Colombia - Trabajando de forma remota para clientes internacionales.
+                    {t('history.locationDesc')}
                   </Typography>
                 </CardContent>
               </Card>

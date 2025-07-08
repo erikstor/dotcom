@@ -12,9 +12,11 @@ import { motion } from 'framer-motion';
 import { getImagePath } from '../../utils/paths';
 import AnimatedCard from '../AnimatedCard';
 import AnimatedIcon from '../AnimatedIcon';
+import { useI18n } from '../../contexts/I18nContext';
 
 export default function HomeSection({ onNavigate }) {
   const theme = useTheme();
+  const { t } = useI18n();
 
   const handleNavigation = (tabIndex) => {
     onNavigate(tabIndex);
@@ -67,7 +69,7 @@ export default function HomeSection({ onNavigate }) {
                     textShadow: '2px 2px 4px rgba(0,0,0,0.3)'
                   }}
                 >
-                  ¡Hola!
+                  {t('home.title')}
                 </Typography>
               </motion.div>
 
@@ -87,7 +89,7 @@ export default function HomeSection({ onNavigate }) {
                     textShadow: '1px 1px 2px rgba(0,0,0,0.3)'
                   }}
                 >
-                  Mi nombre es <strong>Erik Stor</strong>, bienvenido a mi espacio profesional en la web.
+                  {t('home.subtitle')}
                 </Typography>
               </motion.div>
 
@@ -106,8 +108,7 @@ export default function HomeSection({ onNavigate }) {
                     textShadow: '1px 1px 2px rgba(0,0,0,0.3)'
                   }}
                 >
-                  Soy desarrollador web backend con experiencia en tecnologías modernas.
-                  Me apasiona crear soluciones digitales innovadoras y eficientes.
+                  {t('home.description')}
                 </Typography>
               </motion.div>
 
@@ -144,7 +145,7 @@ export default function HomeSection({ onNavigate }) {
                           transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
                         }}
                       >
-                        Conóceme un poco
+                        {t('home.cta')}
                       </Button>
                     </motion.div>
                   </Grid>
@@ -174,7 +175,7 @@ export default function HomeSection({ onNavigate }) {
                           transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
                         }}
                       >
-                        Mis habilidades
+                        {t('navigation.skills')}
                       </Button>
                     </motion.div>
                   </Grid>
@@ -191,7 +192,7 @@ export default function HomeSection({ onNavigate }) {
                   color="white"
                   sx={{ mb: 2, textShadow: '1px 1px 2px rgba(0,0,0,0.3)' }}
                 >
-                  <strong>Tecnologías que he utilizado</strong>
+                  <strong>{t('home.technologiesTitle')}</strong>
                 </Typography>
                 <Box
                   sx={{

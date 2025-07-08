@@ -20,11 +20,14 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { getImagePath } from '../utils/paths';
+import { useI18n } from '../contexts/I18nContext';
+import LanguageSelector from './LanguageSelector';
 
 export default function Header({ activeTab, onTabChange }) {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { t } = useI18n();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -38,10 +41,10 @@ export default function Header({ activeTab, onTabChange }) {
   };
 
   const tabs = [
-    { label: 'Inicio', value: 0 },
-    { label: 'Historia', value: 1 },
-    { label: 'Habilidades', value: 2 },
-    { label: 'Proyectos', value: 3 }
+    { label: t('navigation.home'), value: 0 },
+    { label: t('navigation.history'), value: 1 },
+    { label: t('navigation.skills'), value: 2 },
+    { label: t('navigation.projects'), value: 3 }
   ];
 
   const drawer = (
@@ -100,55 +103,59 @@ export default function Header({ activeTab, onTabChange }) {
             </Link>
           </motion.div>
 
-          {isMobile ? (
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              whileHover={{ scale: 1.1 }}
-            >
-              <IconButton
-                color="inherit"
-                aria-label="open drawer"
-                edge="start"
-                onClick={handleDrawerToggle}
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+            <LanguageSelector />
+            
+            {isMobile ? (
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                whileHover={{ scale: 1.1 }}
               >
-                <MenuIcon />
-              </IconButton>
-            </motion.div>
-          ) : (
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <Tabs
-                value={activeTab}
-                onChange={onTabChange}
-                sx={{
-                  '& .MuiTabs-indicator': {
-                    backgroundColor: '#875491',
-                    height: 3
-                  },
-                  '& .MuiTab-root': {
-                    color: 'white',
-                    fontWeight: 500,
-                    fontSize: '1rem',
-                    textTransform: 'none',
-                    minWidth: 100,
-                    '&.Mui-selected': {
+                <IconButton
+                  color="inherit"
+                  aria-label="open drawer"
+                  edge="start"
+                  onClick={handleDrawerToggle}
+                >
+                  <MenuIcon />
+                </IconButton>
+              </motion.div>
+            ) : (
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+              >
+                <Tabs
+                  value={activeTab}
+                  onChange={onTabChange}
+                  sx={{
+                    '& .MuiTabs-indicator': {
+                      backgroundColor: '#875491',
+                      height: 3
+                    },
+                    '& .MuiTab-root': {
                       color: 'white',
-                      fontWeight: 600
+                      fontWeight: 500,
+                      fontSize: '1rem',
+                      textTransform: 'none',
+                      minWidth: 100,
+                      '&.Mui-selected': {
+                        color: 'white',
+                        fontWeight: 600
+                      }
                     }
-                  }
-                }}
-              >
-                {tabs.map((tab) => (
-                  <Tab key={tab.value} label={tab.label} />
-                ))}
-              </Tabs>
-            </motion.div>
-          )}
+                  }}
+                >
+                  {tabs.map((tab) => (
+                    <Tab key={tab.value} label={tab.label} />
+                  ))}
+                </Tabs>
+              </motion.div>
+            )}
+          </Box>
         </Toolbar>
       </AppBar>
 

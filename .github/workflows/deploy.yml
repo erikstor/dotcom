@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master, main ]
   workflow_dispatch:
 
 permissions:
@@ -28,10 +28,24 @@ jobs:
           cache: 'npm'
           
       - name: Install dependencies
-        run: npm install
+        run: npm ci
+        
+      - name: Verify Next.js config
+        run: |
+          echo "Verificando configuración de Next.js..."
+          node -e "console.log('Next.js config:', require('./next.config.js'))"
         
       - name: Build with Next.js
         run: npm run build
+        env:
+          NODE_ENV: production
+        
+      - name: Verify build output
+        run: |
+          echo "Verificando archivos generados..."
+          ls -la out/
+          echo "Verificando archivos HTML..."
+          find out/ -name "*.html" | head -5
         
       - name: Setup Pages
         uses: actions/configure-pages@v4

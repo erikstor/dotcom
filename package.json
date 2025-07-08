@@ -9,7 +9,9 @@
     "start": "next start",
     "lint": "next lint",
     "export": "next build",
-    "deploy": "npm run build"
+    "deploy": "npm run build",
+    "build:static": "NODE_ENV=production next build",
+    "preview": "npx serve out"
   },
   "dependencies": {
     "@emotion/react": "^11.11.0",
@@ -20,10 +22,12 @@
     "@tsparticles/engine": "^3.8.1",
     "@tsparticles/react": "^3.0.0",
     "framer-motion": "^12.23.0",
+    "i18n": "^0.15.1",
     "next": "^14.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-particles": "^2.12.2",
+    "sass": "^1.89.2",
     "tsparticles": "^3.8.1"
   },
   "devDependencies": {
